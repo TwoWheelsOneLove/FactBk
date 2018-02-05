@@ -9,7 +9,7 @@ const sql = mysql.createConnection(config.mysql);
 
 module.exports.listFacts = () => {
   return new Promise((resolve, reject) => {
-    let query = 'SELECT id, locX, locY, text FROM fact';
+    let query = 'select fact.id, fact.text, location.locX, location.locY from fact join location where fact.locationID = location.id'
 
 
 

@@ -1,0 +1,31 @@
+
+
+.factMarker {
+  position: absolute;
+  left: 50vw;
+  color: red;
+  bottom: 50vh;
+}
+
+.factText{
+  font-family: sans-serif;
+  display: none;
+  color: black;
+}
+
+.factMarker:hover {
+  background-color: none;
+  width: auto;
+  cursor: pointer;
+  color: gray;
+}
+
+.factMarker:hover .factText{
+  display: block;
+  position: absolute;
+  bottom: 0px;
+}
+
+main {
+
+}
