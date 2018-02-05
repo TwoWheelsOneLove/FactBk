@@ -2,7 +2,7 @@
 
 const express = require('express');
 
-const db = require('/databaseModel');
+const db = require('./databaseModel');
 
 const config = require("./config");
 
@@ -12,10 +12,10 @@ const app = express();
 
 
 //static pages
-app.use('/', express.static(config.webpaces, {extensions: ['html'] }));
+app.use('/', express.static(config.webpages, {extensions: ['html'] }));
 
 //API FUNCTIONS
-app.get('/factbk/facts', plotFacts);
+app.get('/api/facts', sendFacts);
 
 
 // start server
@@ -26,8 +26,13 @@ app.listen(8080, (err) => {
 
 
 //server functionality
-async function plotFacts(){
-
+async function sendFacts(req, res){
+  try{
+    const facts = await db.listFacts();
+    res.json(facts);
+  }catch(e){
+    error(res,e);
+  }
 }
 
 async function deleteFact(){
@@ -36,4 +41,11 @@ async function deleteFact(){
 
 async function editFact(){
 
+}
+
+
+
+function error(res, msg) {
+  res.sendStatus(500);
+  console.error(msg);
 }
