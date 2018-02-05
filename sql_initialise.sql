@@ -2,31 +2,24 @@
 
 create database if not exists factBk;
 
-create table if not exists factBk.fact (
-  
-create TABLE user(
+
+create TABLE if not exists factBk.user(
 ID INT(10) PRIMARY KEY,
-Email VARCHAR(30) NOT NULL,
-Password VARCHAR(50) NOT NULL,
+email VARCHAR(30) NOT NULL,
+password VARCHAR(50) NOT NULL
 );
 
-
-create TABLE location(
+create TABLE if not exists factBk.location(
 locationID INT(10) PRIMARY KEY,
 locationX FLOAT(3,10) NOT NULL,
 locationY FLOAT(3,10) NOT NULL,
-LocationReference TEXT(50) NOT NULL,
+imgReference TEXT(50) NOT NULL
 );
 
-
-create TABLE facts(
+create TABLE if not exists factBk.facts(
 factID INT(10) PRIMARY KEY,
 factText TEXT(5000) NOT NULL,
-CONSTRAINT FOREIGN KEY (locationID)
+locationID INT(10) NOT NULL,
+CONSTRAINT fkLocation FOREIGN KEY (locationID) REFERENCES location(locationID)
 );
 
-
-create table if not exists factBk.user (
-
-
-);
