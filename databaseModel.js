@@ -25,7 +25,7 @@ module.exports.listFacts = () => {
            id: row.id,
            x: row.locX,
            y: row.locY,
-           fact: row.text,
+           text: row.text,
          });
     });
 

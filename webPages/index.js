@@ -27,24 +27,22 @@ async function loadFacts(){
 }
 
 function displayFacts(facts){
-
-  window.main.innerHTML = facts;
+window.main.innerHTML='';
 
   facts.forEach((fact) => {
     const marker = document.createElement('div');
     marker.classList.add('factMarker');
-    marker.setAttribute("style", "left: " + fact.x + "px;");
-    marker.setAttribute("style", "bottom: " + fact.y + "px;");
+    marker.setAttribute("style", "left: " + fact.x + "px;" + "bottom: " + fact.y + "px;");
     window.main.appendChild(marker);
 
     const locationIcon = document.createElement("i");
     locationIcon.classList.add('material-icons');
     locationIcon.innerHTML = 'location_on';
     marker.appendChild(locationIcon);
-    
+
     const info = document.createElement('div');
     info.classList.add('factText');
-    info.textContent = fact.text;
+    info.innerHTML = fact.text;
     marker.appendChild(info);
   });
 };

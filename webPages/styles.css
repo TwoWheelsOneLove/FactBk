@@ -1,10 +1,10 @@
-
+body {
+  background-image: url('pmth.PNG');
+}
 
 .factMarker {
-  position: absolute;
-  left: 50vw;
+  position: fixed;
   color: red;
-  bottom: 50vh;
 }
 
 .factText{
