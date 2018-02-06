@@ -1,0 +1,92 @@
+body{
+	background-image: url("background.png");
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 200px;
+  grid-template-areas:
+    ". a a ."
+    ". a a .";
+}
+/*grid properties*/
+.item1 {
+  background: rgba(0,0,0,0.7);/*grid colour & opacity*/
+  height: 210px;
+  width: 400px;
+  padding: 25px;
+  margin: 25px;
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
+}
+/*grid opacity*/
+.input{
+  opacity: 1;
+  font-size: 20px;
+}
+
+/*button style*/
+.button {
+    background-color: #FFA500; /* orange */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {border-radius: 100%;}
+.button1 {width: 100px;}
+
+button:active{
+    background:grey;
+}
+
+a {
+    color: orange;
+}
+
+a:active {
+  color:grey;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+h {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 19px;
+}
+
+/*textbox style*/
+.textbox {
+    height: 25px;
+    width: 275px;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: white;
+    outline:0;
+  }
+
+  #myDIV {
+    background: rgba(0,0,0,0.7);/*grid colour & opacity*/
+    height: 280px;
+    width: 410px;
+    padding: 25px;
+    margin: 25px;
+    grid-area: a;
+    align-self: center;
+    justify-self: center;
+    display: none;
+  }

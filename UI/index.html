@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FackBk</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+ <div
+ class="item1">
+  <center><h><font color="white">Log in to Fact</font><font color="Orange">Bk</font></h></center>
+  <p><label><font color="white">&emsp;Email:&nbsp;&nbsp;</font></label>
+  <input class="textbox"  type = "text"
+  id = "myText"/>
+</p>
+  <p><label><font color="white">Password:</font></label>
+  <input class = "textbox"  type = "text"
+  id = "myText"/>
+</p>
+<center>
+<button class="button button1">Sign in</button>
+ </center>
+  <center>
+ <p><font color="white">Haven't got an account? Create one <a onclick="myFunction()">here</a></font></p>
+  </center>
+ </div>
+</div>
+<div id="myDIV">
+  <center><h1><font color="white">Please fill in the details below to create an account</font></h1></center>
+  <p><label><font color="white">&emsp;Name:&nbsp;&nbsp;</font></label>
+  <input class="textbox" type = "text"
+  id = "myText"/>
+  <p><label><font color="white">&emsp;email:&nbsp;&nbsp;</font></label>
+  <input class="textbox" type = "text"
+  id = "myText"/>
+  </p>
+  <p><label><font color="white">Password:</font></label>
+  <input class = "textbox" type = "text"
+  id = "myText"/>
+  </p>
+  <center>
+  <button class="button button1">Create account</button>
+  </center>
+  <p><font color="white">Fact</font><font color="Orange">Bk</font></p>
+</div>
+<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display ==="block") {
+        x.style.display = "none";
+      }
+    else {
+        x.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
