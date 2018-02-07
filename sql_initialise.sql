@@ -24,9 +24,19 @@ create TABLE if not exists factBk.fact(
 insert ignore into factBk.user values (1, "dan lincoln", "testPassword");
 
 /* LOCATION INSERTS */
-insert ignore into factBk.location values (1, 200.30, 200.10);
-insert ignore into factBk.location values (2, 300.00, 500.10);
-insert ignore into factBk.location values (3, 100.00, 250.00);
+insert ignore into factBk.location values (1, 50.802164, -1.108874);
+insert ignore into factBk.location values (2, 50.800484, -1.109455);
+insert ignore into factBk.location values (3, 50.800840, -1.110010);
+insert ignore into factBk.location values (4, 50.801741, -1.110687);
+insert ignore into factBk.location values (5, 50.798218, -1.109280);
+insert ignore into factBk.location values (6, 50.798937, -1.094129);
+insert ignore into factBk.location values (7, 50.800284, -1.094795);
+insert ignore into factBk.location values (8, 50.797571, -1.092923);
+insert ignore into factBk.location values (9, 50.796490, -1.093246);
+insert ignore into factBk.location values (10, 50.788978, -1.104003);
+insert ignore into factBk.location values (11, 50.779638, -1.089424);
+insert ignore into factBk.location values (12, 50.777992, -1.088841);
+insert ignore into factBk.location values (13, 50.800523, -1.109459);
 
 /* FACT INSERTS */
 insert ignore into factBk.fact values (1,"A fact about a place", 1);
