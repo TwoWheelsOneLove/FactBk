@@ -1,17 +1,17 @@
 
-Mary Rose Museum
+Mary Rose Museum: 50.802164, -1.108874
 The Mary Rose Museum is a historical museum located at Historic Dockyards in Portsmouth in the United Kingdom run by the Mary Rose Trust. The museum is dedicated to the 16th century Tudor navy warship Mary Rose as well as the historical context in which she was active. The museum opened in 1984 and displays artefacts from the ship as well as the ship itself in a dedicated ship hall, while it has been undergoing conservation. In September 2009 the ship hall was closed to allow the start of construction of a new museum that was opened at the end of May 2013.
 
-Portsmouth Historic Dockyard
+Portsmouth Historic Dockyard: 50.800484, -1.109455
 Her Majesty's Naval Base, Portsmouth (HMNB Portsmouth) is one of three operating bases in the United Kingdom for the British Royal Navy. Portsmouth Naval Base is part of the city of Portsmouth; it is located on the eastern shore of Portsmouth Harbour, north of the Solent and the Isle of Wight. Until the early 1970s it was officially known as Portsmouth Royal Dockyard (or HM Dockyard, Portsmouth). The shipbuilding, repair and maintenance element of the base was privatized in the late-1990s/early-2000s. The base is home to one of the oldest dry docks in the world, as well as being the headquarters for two-thirds of the Royal Navy's surface fleet.
  
-National Museum of the Royal Navy, Portsmouth
+National Museum of the Royal Navy, Portsmouth: 50.800840, -1.110010
 The National Museum of the Royal Navy, Portsmouth, formerly known as the Royal Naval Museum, is a museum of the history of the Royal Navy located in the Portsmouth Historic Dockyard section of HMNB Portsmouth, Portsmouth, Hampshire, England. The museum is part of the National Museum of the Royal Navy, a non-departmental public body sponsored by the Ministry of Defence. The museum was founded in 1911. Known originally as the "Dockyard Museum", it was conceived by Mr Mark Edwin Pescott-Frost, then secretary to the Admiral Superintendent at Portsmouth. With a passion for naval history he spearheaded a project to save items for future generations, eventually leading to the opening of a new museum. His foresight ensured the survival of many interesting and important artefacts, several of which are still on display today. He was awarded the Imperial Service Order in 1916.
 
-HMS M33
+HMS M33: 50.801741, -1.110687
 HMS M33 is an M29-class monitor of the Royal Navy built in 1915. She saw active service in the Mediterranean during the First World War and in Russia during the Allied Intervention in 1919. She was used subsequently as a mine-laying training ship, fuelling hulk, boom defence workshop and floating office, being renamed HMS Minerva and Hulk C23 during her long life. She passed to Hampshire County Council in the 1980s and was then handed over to the National Museum of the Royal Navy in 2014. A programme of conservation was undertaken to enable her to be opened to the public. HMS M.33 is located within Portsmouth Historic Dockyard and opened to visitors on 7 August 2015 following a service of dedication. She is one of only three surviving Royal Navy warships of the First World War and the only surviving ship from the Gallipoli Campaign. M33 was built as part of the rapid ship construction campaign following the outbreak of the First World War by Harland and Wolff, Belfast. Ordered in March 1915, she was launched in May and commissioned in June; an impressive shipbuilding feat especially considering that numerous other ships of her type were being built in the same period.[1]
 
-HMS Warrior
+HMS Warrior: 50.798218, -1.109280
 HMS Warrior is a 40-gun steam-powered armoured frigate[Note 1] built for the Royal Navy in 1859–61. She was the name ship of the Warrior-class ironclads. Warrior and her sister ship HMS Black Prince were the first armour-plated, iron-hulled warships, and were built in response to France's launching in 1859 of the first ocean-going ironclad warship, the wooden-hulled Gloire. Warrior conducted a publicity tour of Great Britain in 1863 and spent her active career with the Channel Squadron. Obsolescent following the 1871 launching of the mastless and more capable HMS Devastation, she was placed in reserve in 1875, and was "paid off" – decommissioned – in 1883. She subsequently served as a storeship and depot ship, and in 1904 was assigned to the Royal Navy's torpedo training school.
 
 Victoria Park: 50.798937, -1.094129
