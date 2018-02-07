@@ -14,7 +14,7 @@ create TABLE if not exists factBk.location(
 
 create TABLE if not exists factBk.fact(
   id int PRIMARY KEY auto_increment,
-  text varchar(200) NOT NULL,
+  text varchar(500) NOT NULL,
   locationID INT(10) NOT NULL,
   CONSTRAINT fkLocation FOREIGN KEY (locationID) REFERENCES location(id)
 );
