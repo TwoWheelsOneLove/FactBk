@@ -22,6 +22,10 @@ create TABLE if not exists factBk.fact(
 
 /* USER INSERTS*/
 insert ignore into factBk.user values (1, "dan lincoln", "testPassword");
+insert ignore into factBk.user values (2, "surajit ghosh", "testPassword2");
+insert ignore into factBk.user values (3, "nasser", "testPassword3");
+insert ignore into factBk.user values (4, "igor", "testPassword4");
+insert ignore into factBk.user values (5, "isa", "testPassword5");
 
 /* LOCATION INSERTS */
 insert ignore into factBk.location values (1, 50.802164, -1.108874);
