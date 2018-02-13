@@ -1,6 +1,10 @@
 window.addEventListener('load', initialize);
 
 function initialize(){
+  window.LoginButton.addEventListener('click', login);
+  window.SignupButton.addEventListener('click', signup);
+
+
   window.log.addEventListener('click', openLogin);
   window.sign.addEventListener('click', openSignin);
 }
@@ -19,4 +23,12 @@ function openSignin(){
 
   window.logForm.setAttribute("style","display:none;")
   window.signForm.setAttribute("style","display:grid;")
+}
+
+async function login(){
+  console.log('user logging in');
+}
+
+async function signup(){
+  console.log('user signed up');
 }

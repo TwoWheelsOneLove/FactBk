@@ -1,10 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
 /* LOGIN SPECIFIC STYLES */
 #login {
+  font-family: sans-serif;
   background-color: #f9f9f9;
   width: 30vw;
   margin: 30vh auto;
@@ -13,6 +13,7 @@
 }
 
 #login button{
+  font-weight: bolder;
   border: none;
   outline: none;
   cursor: pointer;
@@ -45,6 +46,15 @@
   border: thin #00abff solid;
   height: 2em;
   margin-bottom: 1em;
+}
+
+#login form button {
+  background-color: #00abff;
+  color: white;
+  height: 2em;
+  margin:auto;
+  width: 50%;
+  border-radius: .5em;
 }
 
 #logForm {
