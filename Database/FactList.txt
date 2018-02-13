@@ -55,3 +55,18 @@ Fort Cumberland is a pentagonal artillery fortification erected to guard the ent
 
 King James's and Landport Gates: 50.795858, -1.098550
 King James's and Landport Gates are two English Heritage gateways in Portsmouth, Hampshire, England.Earthen ramparts protecting the land side of the port containing munitions, international goods storage, warehouses, shops and homes were constructed in the 14th century which were strengthened by order of Henry VIII in the 16th.Four ornate gateways were originally access points to Portsmouth through the town walls. The majority of the town walls were demolished in 1860.
+
+Millennium Promenade: 50.785743, -1.101013
+Three kilometres of promenade now links all of Portsmouth’s historic waterfront. The route starts from Spur Redoubt near Clarence Pier, Southsea and finishes on The Hard, taking in Old Portsmouth, the Camber and Gunwharf Quays.
+
+Square Tower: 50.789327, -1.106513
+The Square Tower is one of the oldest surviving parts of Portsmouth's fortifications, built to defend the city and harbour. Built in 1494, it was originally a fortified residence for the governor of Portsmouth. It has subsequently been used to first store gunpowder and then meat for the Royal Navy.
+
+Round Tower: 50.790537, -1.108886
+The site was originally occupied by a wooden tower before being replaced by a stone one. The wooden tower was built between 1418 and 1426 on the orders of King Henry V. In the 1490s the tower was rebuilt in stone. In the 1680s a line of ramparts was added that connected the tower to the square tower.
+
+Portsmouth Harbour: 50.824558, -1.117679
+The mouth of the harbour provides access to the Solent. It is best known as the home of the Royal Navy, HMNB Portsmouth. Because of its strategic location on the south coast of England, protected by the natural defence of the Isle of Wight, it has since the Middle Ages been the home to England's (and later Britain's) navy. The narrow entrance, and the forts surrounding it gave it a considerable advantage of being virtually impregnable to attack from the sea. Before the fortifications were built the French burned Portsmouth in 1338.
+
+Camber Dock: 50.792040, -1.107465
+Camber Dock is the oldest developed part of the Portsmouth Harbour complex. Lying within the historic area of Old Portsmouth, it is part of Portsmouth Point that lies outside the original fortified boundaries of Portsmouth. After improvements in the King James's and Landport Gates and the areas military defences, civilian building of dockside storage and ancillary servicing facilities began from 1590. With major ships anchored at Spithead, from the 18th century the surrounding area became noted as a popular but lewd area for visiting sailors.
