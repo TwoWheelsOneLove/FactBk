@@ -1,4 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+/* LOGIN SPECIFIC STYLES */
+#login {
+  background-color: #f9f9f9;
+  width: 30vw;
+  margin: 30vh auto;
+  padding-bottom: 1em;
+  box-shadow: 0px 2px 10px rgba(40,0,0, 0.4);
+}
+
+#login button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#login #sign {
+  height: 5vh;
+  width: 50%;
+  background-color: #00ABFF;
+  float: left;
+  color: white;
+  margin-bottom: 2em;
+}
+
+#login #log {
+  height: 5vh;
+  float: left;
+  width: 50%;
+  background-color: white;
+  color: #00ABFF;
+  margin-bottom: 2em;
+}
+
+#login form {
+  width: 80%;
+  margin:auto;
+}
+
+#logForm {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+#signForm {
+  display: none;
+  grid-template-rows: 1fr;
+}
+
+
+/*Index Styling */
 body {
+  background-attachment: fixed;
+  background-position: bottom;
   background-image: url('pmth.PNG');
 }
 
@@ -24,8 +81,4 @@ body {
   display: block;
   position: absolute;
   bottom: 0px;
-}
-
-main {
-
 }
