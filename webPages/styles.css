@@ -41,6 +41,12 @@
   margin:auto;
 }
 
+#login form input{
+  border: thin #00abff solid;
+  height: 2em;
+  margin-bottom: 1em;
+}
+
 #logForm {
   display: grid;
   grid-template-rows: 1fr;
