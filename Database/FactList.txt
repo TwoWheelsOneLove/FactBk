@@ -38,5 +38,9 @@ Southsea Castle, historically also known as Chaderton Castle, South Castle and P
 HMS Victory: 50.800523, -1.109459
 HMS Victory is a 104-gun first-rate ship of the line of the Royal Navy, ordered in 1758, laid down in 1759 and launched in 1765. She is best known for her role as Lord Nelson's flagship at the Battle of Trafalgar on 21 October 1805.
 
+Spinnaker Tower: 50.795573, -1.108490
+The Spinnaker Tower is a 560-foot (170 m) landmark observation tower in Portsmouth, England, UK. It is the centrepiece of the redevelopment of Portsmouth Harbour, which was supported by a National Lottery grant. Its shape was chosen by Portsmouth residents from a selection. The tower, designed by local firm HGP Architects and engineering consultants Scott Wilson and built by Mowlem, reflects Portsmouth's maritime history through its being modelled after a sail. The tower was opened on 18 October 2005.
+The tower is owned by Portsmouth City Council, but operationally it is managed by Continuum Leading Attractions, a cultural attractions group based in York. Continuum also runs five other visitor attractions across the country. Following a commercial sponsorship deal with Dubai-based Emirates airline, the tower was renamed in July 2015.
+
 
 
