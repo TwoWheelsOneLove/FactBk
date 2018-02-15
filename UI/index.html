@@ -5,55 +5,52 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrapper">
- <div
- class="item1">
-  <center><h><font color="white">Log in to Fact</font><font color="Orange">Bk</font></h></center>
-  <p><label><font color="white">&emsp;Email:&nbsp;&nbsp;</font></label>
-  <input class="textbox"  type = "text"
-  id = "myText"/>
-</p>
-  <p><label><font color="white">Password:</font></label>
-  <input class = "textbox"  type = "text"
-  id = "myText"/>
-</p>
-<center>
-<button class="button button1">Sign in</button>
- </center>
-  <center>
- <p><font color="white">Haven't got an account? Create one <a onclick="myFunction()">here</a></font></p>
-  </center>
- </div>
-</div>
-<div id="myDIV">
-  <center><h1><font color="white">Please fill in the details below to create an account</font></h1></center>
-  <p><label><font color="white">&emsp;Name:&nbsp;&nbsp;</font></label>
-  <input class="textbox" type = "text"
-  id = "myText"/>
-  <p><label><font color="white">&emsp;email:&nbsp;&nbsp;</font></label>
-  <input class="textbox" type = "text"
-  id = "myText"/>
-  </p>
-  <p><label><font color="white">Password:</font></label>
-  <input class = "textbox" type = "text"
-  id = "myText"/>
-  </p>
-  <center>
-  <button class="button button1">Create account</button>
-  </center>
-  <p><font color="white">Fact</font><font color="Orange">Bk</font></p>
-</div>
-<script>
-function myFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display ==="block") {
-        x.style.display = "none";
-      }
-    else {
-        x.style.display = "block";
-    }
-}
-</script>
+  <div class="main">
+    <center>
+   <div
+   class="item1">
+    <center><h><font color="white">Log in to Fact</font><font color="Orange">Bk</font></h></center>
+    <p><label><font id = "box" color="white">&emsp;Email:&nbsp;&nbsp;</font></label>
+    <input class="textbox"  type = "text"
+    id = "myText"/>
+    </p>
+    <p><label><font id = "p" color="white">Password:</font></label>
+    <input class = "textbox"  type = "password"
+    id = "myText"/>
+    </p>
+    <center>
+    <button class="button button1">Sign in</button>
+    </center>
+    <center>
+     <p><font color="white" id="here">Haven't got an account? Create one <a onclick="myFunction()">here</a></font></p>
+    </center>
+    </div>
+    </center>
+    </div>
 
+    <div class="main">
+    <center>
+    <div id="myDIV">
+    <center><h1><font color="white">Please fill in the details below to create an account</font></h1></center>
+    <p><label><font color="white">&emsp;Name:&nbsp;&nbsp;</font></label>
+    <input class="textbox" type = "text"
+    id = "myText"/>
+    <p><label><font color="white">&emsp;email:&nbsp;&nbsp;</font></label>
+    <input class="textbox" type = "text"
+    id = "myText"/>
+    </p>
+    <p><label><font color="white">Password:</font></label>
+    <input class = "textbox" type = "password"
+    id = "myText"/>
+    </p>
+    <center>
+    <button class="button button1">Create account</button>
+    </center>
+    <p><font color="white" id="signin">Fact</font><font color="Orange">Bk</font><font color="white">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Already have an account? <a id='btn'> Sign in</a></p>
+    </div>
+    </center>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
+

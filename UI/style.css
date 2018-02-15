@@ -1,15 +1,7 @@
 body{
 	background-image: url("background.png");
 }
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: 200px;
-  grid-template-areas:
-    ". a a ."
-    ". a a .";
-}
+
 /*grid properties*/
 .item1 {
   background: rgba(0,0,0,0.7);/*grid colour & opacity*/
@@ -20,11 +12,6 @@ body{
   grid-area: a;
   align-self: center;
   justify-self: center;
-}
-/*grid opacity*/
-.input{
-  opacity: 1;
-  font-size: 20px;
 }
 
 /*button style*/
@@ -48,6 +35,7 @@ button:active{
     background:grey;
 }
 
+/*link style*/
 a {
     color: orange;
 }
