@@ -6,6 +6,7 @@ function initialize(){
 
 //Add a new fact to the db
   async function submitFact(){
+    const titleEl = document.getElementById('factTitle');
     const textEl = document.getElementById('factText');
     const factLatEl = document.getElementById('factLat');
     const factLongEl = document.getElementById('factLong');
@@ -15,7 +16,8 @@ function initialize(){
     submitButton.disabled = true;
 
     let url ='/api/facts';
-    url += '?text=' + encodeURIComponent(textEl.value);
+    url += '?title=' + encodeURIComponent(titleEl.value);
+    url += '&text=' + encodeURIComponent(textEl.value);
     url += '&lat=' + encodeURIComponent(factLatEl.value);
     url += '&long=' + encodeURIComponent(factLongEl.value);
 
@@ -32,6 +34,7 @@ function initialize(){
   }
 
   function factSubmitted(){
+    document.getElementById('factTitle').value='';
     document.getElementById('factText').value='';
     document.getElementById('factLat').value='';
     document.getElementById('factLong').value='';
@@ -97,7 +100,7 @@ window.main.setAttribute("style","display:none;")
             });
 
     let infoWindow = new google.maps.InfoWindow({
-      content:'<p>' + fact.text + '</p><button><i class="material-icons">directions_walk</i></button></p><button><i class="material-icons">email</i></button>'
+      content:'<h1>'+ fact.title +'</h1> <p>' + fact.text + '</p><button><i class="material-icons">directions_walk</i></button></p><button><i class="material-icons">email</i></button>'
     });
 
     marker.addListener('click', function(){

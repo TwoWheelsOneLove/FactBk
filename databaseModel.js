@@ -9,7 +9,7 @@ const sql = mysql.createConnection(config.mysql);
 
 module.exports.listFacts = () => {
   return new Promise((resolve, reject) => {
-    let query = 'select fact.id, fact.text, fact.locX, fact.locY from fact'
+    let query = 'select fact.factTitle, fact.id, fact.text, fact.locX, fact.locY from fact'
 
 
 
@@ -23,11 +23,12 @@ module.exports.listFacts = () => {
        data.forEach((row)=>{
          retval.push({
            id: row.id,
+           title:row.factTitle,
            x: row.locX,
            y: row.locY,
            text: row.text,
          });
-    });
+       });
 
   resolve(retval);
     });
@@ -36,12 +37,13 @@ module.exports.listFacts = () => {
 
 };
 
-
-function addFact(text, lat, long){
+module.exports.addFact = (title, text, lat, long) => {
   return new Promise((resolve, reject) => {
 
     // now add the file to the DB
     const dbRecord = {
+      factTitle: title,
+      text: text,
       locX: lat,
       locY: long
     };
@@ -52,8 +54,7 @@ function addFact(text, lat, long){
         return;
       }
 
-      resolve({ id: result.insertId, title: dbRecord.title, file: config.webimg + dbRecord.filename });
+      resolve({id: result.insertId, title: dbRecord.factTitle,text:dbRecord.text, x:dbRecord.locX, y:dbRecord.locY});
     });
-  });
-});
-};
+    });
+  };

@@ -36,16 +36,16 @@ async function sendFacts(req, res){
 
 async function addFact(req,res){
 
+  console.log("fact text:   " + req.query.title);
   console.log("fact text:   " + req.query.text);
   console.log("fact Lattitude:   " + req.query.lat);
   console.log("fact Longitude:   " + req.query.long);
 
-  res.json(200);
+
   try {
-    const retval = await db.addFact(req.body.text, req.body.lat, req.body.long);
+      const retval = await db.addFact(req.query.title,req.query.text,req.query.lat,req.query.long);
       if (req.accepts('html')) {
-          // browser should go to the listing of pictures
-          res.redirect(303, '/#' + retval.id);
+          res.json(200);
         } else {
           // request that accepts JSON will instead get the data
           res.json(retval);
@@ -55,14 +55,14 @@ async function addFact(req,res){
       error(res, e);
       }
     }
+
+
+
+function deleteFact(){
+
 }
 
-
-async function deleteFact(){
-
-}
-
-async function editFact(){
+function editFact(){
 
 }
 

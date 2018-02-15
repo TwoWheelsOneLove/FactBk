@@ -11,7 +11,7 @@ create TABLE if not exists factBk.fact(
   factTitle varchar(50) NOT NULL,
   text varchar(500) NOT NULL,
   locX FLOAT(20) NOT NULL,
-  locY FLOAT(20) NOT NULL,
+  locY FLOAT(20) NOT NULL
 );
 
 
@@ -22,38 +22,8 @@ insert ignore into factBk.user values (3, "nasser", "testPassword3");
 insert ignore into factBk.user values (4, "igor", "testPassword4");
 insert ignore into factBk.user values (5, "isa", "testPassword5");
 
-/* LOCATION INSERTS */
-
-
-
-
-
-
-insert ignore into factBk.location values (14, );
-insert ignore into factBk.location values (15,);
-insert ignore into factBk.location values (16, );
-insert ignore into factBk.location values (17, );
-insert ignore into factBk.location values (18, );
-insert ignore into factBk.location values (19,);
-insert ignore into factBk.location values (20,);
-insert ignore into factBk.location values (21,);
-insert ignore into factBk.location values (22,);
-insert ignore into factBk.location values (23,);
-insert ignore into factBk.location values (24,);
-insert ignore into factBk.location values (25,);
-insert ignore into factBk.location values (26,);
-insert ignore into factBk.location values (27,50.798111, -1.077030);
-insert ignore into factBk.location values (28,);
-insert ignore into factBk.location values (29,);
-insert ignore into factBk.location values (30,50.82838, -1.06682);
-insert ignore into factBk.location values (31,);
-insert ignore into factBk.location values (32,50.811559, -1.051832);
-insert ignore into factBk.location values (33,50.815004, -1.154968);
-insert ignore into factBk.location values (34,50.807929, -1.083293);
-insert ignore into factBk.location values (35,50.816083, -1.064722);
-
 /* FACT INSERTS */
-insert ignore into factBk.fact values50.837546, -1.113722 (1,"The Mary Rose","The Mary Rose Museum is a historical museum located at Historic Dockyards in Portsmouth in the United Kingdom run by the Mary Rose Trust. The museum is dedicated to the 16th century Tudor navy warship Mary Rose as well as the historical context in which she was active. The museum opened in 1984 and displays artefacts from the ship as well as the ship itself in a dedicated ship hall, while it has been undergoing conservation. In September 2009 the ship hall was closed to allow the start of construction of a new museum that was opened at the end of May 2013.", 50.802164, -1.108874);
+insert ignore into factBk.fact values (1,"The Mary Rose","The Mary Rose Museum is a historical museum located at Historic Dockyards in Portsmouth in the United Kingdom run by the Mary Rose Trust. The museum is dedicated to the 16th century Tudor navy warship Mary Rose as well as the historical context in which she was active. The museum opened in 1984 and displays artefacts from the ship as well as the ship itself in a dedicated ship hall, while it has been undergoing conservation. In September 2009 the ship hall was closed to allow the start of construction of a new museum that was opened at the end of May 2013.", 50.802164, -1.108874);
 
 insert ignore into factBk.fact values (2,"Portsmouth Historic Dockyard","Her Majesty's Naval Base, Portsmouth (HMNB Portsmouth) is one of three operating bases in the United Kingdom for the British Royal Navy. Portsmouth Naval Base is part of the city of Portsmouth; it is located on the eastern shore of Portsmouth Harbour, north of the Solent and the Isle of Wight. Until the early 1970s it was officially known as Portsmouth Royal Dockyard (or HM Dockyard, Portsmouth). The shipbuilding, repair and maintenance element of the base was privatized in the late-1990s/early-2000s. The base is home to one of the oldest dry docks in the world, as well as being the headquarters for two-thirds of the Royal Navy's surface fleet.", 50.800484, -1.109455);
 
@@ -107,10 +77,10 @@ insert ignore into factBk.fact values (26,"Statue of Charles Dickens","The bronz
 
 insert ignore into factBk.fact values (27,"The Froddington Arms","The name Fratton was once Froddington, a Saxon name which originally meant Frodda's Farm or Frodda's village. A pub on Fratton Road is still named The Froddington Arms. Goldsmith's Farm and Fratton Common were part of the original small rural village originally called Froddington, the only visible evidence of this being the presence of a public house, The Froddington Arms on the western side of Fratton Road.", 50.798111, -1.077030);
 
-
 insert ignore into factBk.fact values (28,"The Mudlarking Statue","A mudlark is someone who scavenges in river mud for items of value, a term used especially to describe those who scavenged this way in London during the late 18th and 19th centuries.The nearby statue commemorates the generations of Portsea children who enjoyed mudlarking here - entertaining travellers by retrieving coins they threw into the mud below the bridge to the harbour station and Gosport Ferry. Boys and girls would scramble to find the money tossed down, sometimes diving into the mud, performing handstands or dipping their heads in it. Many Portsea families lived in poverty, so the small change was welcomed. Usually, what the children did not spend on sweets or pie and chips was given to mum to help out the family finances.", 50.798618, -1.107341);
 
 insert ignore into factBk.fact values (29,"The Hilsea Lines","The Hilsea Lines are a line of 18th- and 19th-century fortifications built to protect the northern approach to Portsea, an island off the coast of England which is part of the city of Portsmouth and its key naval base. They are now used as a greenspace and leisure area.", 50.834502, -1.063504);
+
 insert ignore into factBk.fact values (30,"Hilsea Barracks","Hilsea Barracks was a military installation at Hilsea in Portsmouth. The site was originally occupied by Gatcombe Manor, a medieval house which was acquired through marriage by Admiral Sir Roger Curtis in the 18th century.The War Office requisitioned the site from Curtis for military purposes in the 1770s. The garrison commander's house, which was rebuilt in 1780, evolved to become the officers' mess and survives as a Grade II listed building. The barracks, built to accommodate several thousand troops, were completed in 1794 and subsequently enhanced in 1854 for occupation by the Royal Field Artillery: a military chapel known as St Barbara's Garrison Church was added in 1888.", 50.82838, -1.06682);
 
 insert ignore into factBk.fact values (31,"Queen Victoria Statue","The Queen is shown standing in contemplation, gazing forward and slightly downward, mouth severe; the likeness is considered excellent. Alfred Drury made several statues of Queen Victoria. The Portsmouth one dates from 1903, and a very similar one was emplaced in Bradford in the following year.",50.797369, -1.091873);
