@@ -1,4 +1,4 @@
-Who’s doing what?
+Whoâ€™s doing what?
 Dan - All marker behaviour
 Igor - Database  
 Isa - Most of the front end design 
@@ -23,7 +23,7 @@ Login page and form (Dependent on database) - Isa
 Signup page and form (Dependent on Database) - Isa
 Open fact and that UI - serj
 Admin pages - serj
-Tutorial and FAQ if you’ve run out of things to do 
+Tutorial and FAQ if youâ€™ve run out of things to do 
 
 Testing
 Figure out why shit dont work
@@ -40,7 +40,7 @@ How are we going to code?
 Database people will code at the same time - in the same room 
 
 At the start, everyone should be able to code a fair bit on their own
-Then we’ll move on to features that depend on each other - which we’ll meet up to code
+Then weâ€™ll move on to features that depend on each other - which weâ€™ll meet up to code
 Towards the end we will all be in the same room to integrate all features of the program
 
 
@@ -58,13 +58,18 @@ Week 0 - Feb 2nd to Feb 9th
 
 DB - Database Table completed 
 Phil - Put google API on page at 100% screen size
-ISA and Surj - Login and Signup pages (using Dan’s mockups)
+ISA and Surj - Login and Signup pages (using Danâ€™s mockups)
 Dan - Put a marker on a map - clicking activates javascript  
 
-Week 1 
+Week 1 - Feb 10th to Feb 16th
 
 
-Week 2
+Week 2 - Feb 17th to Feb 23rd
+Phil - Implememented Directiop
+Nasser and Igore - Completed table population 
+Isa - Complete signin Page 
+Surajit - Complete Admin screen 
+Dan - Put markers on map interface from Database 
 
 
 Week 3
