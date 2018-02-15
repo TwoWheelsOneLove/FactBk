@@ -101,3 +101,19 @@ body {
   width: 120vw;
   z-index: 0;
  }
+
+/*GOOGLE INFO WINDOW*/
+ .gm-style .gm-style-iw {
+}
+
+.gm-style .gm-style-iw p{
+   color: #00abff;
+}
+
+.gm-style .gm-style-iw button{
+   border:none;
+   background-color:rgba(0,0,0,0);
+   color:#00abff;
+   outline: none;
+   cursor:pointer;
+}

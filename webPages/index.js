@@ -46,12 +46,12 @@ window.main.innerHTML='';
               position:{lat:fact.x,lng:fact.y}
             });
 
-    let infoWindow = new google.maps.infoWindow({
-      content:'<h1>' + fact.text + '</h1>'
+    let infoWindow = new google.maps.InfoWindow({
+      content:'<p>' + fact.text + '</p><button><i class="material-icons">directions_walk</i></button></p><button><i class="material-icons">email</i></button>'
     });
 
-    marker.addEventListener('click', function(){
-      
+    marker.addListener('click', function(){
+      infoWindow.open(map,marker);
     });
 
   });
