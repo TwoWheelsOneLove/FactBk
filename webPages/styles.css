@@ -20,6 +20,26 @@ main {
   color: #00ABFF;
 }
 
+/*Adding Facts form*/
+#addFact {
+  position: absolute;
+  z-index: 100;
+  left: 99.5vw;
+  width: 50vw;
+  height: 100vh;
+  background-color: white;
+  transition: 1s;
+  border-left: solid thick #00abff;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#addFact:hover {
+  left:50vw;
+}
+
+
+
 /* LOGIN SPECIFIC STYLES */
 #login {
   font-family: sans-serif;
@@ -85,13 +105,6 @@ main {
   grid-template-rows: 1fr;
 }
 
-
-/*Index Styling */
-body {
-  background-attachment: fixed;
-  background-position: bottom;
-  background-image: url('pmth.PNG');
-}
 
 /* MAP STYLING */
 

@@ -1,15 +1,63 @@
 window.addEventListener('load', initialize);
 
 function initialize(){
+  document.querySelector('.submitFact').addEventListener('click',submitFact)
 }
+
+//Add a new fact to the db
+  async function submitFact(){
+    const textEl = document.getElementById('factText');
+    const factLatEl = document.getElementById('factLat');
+    const factLongEl = document.getElementById('factLong');
+
+    const submitButton = document.querySelector('.submitFact');
+    submitButton.textContent = 'submitting';
+    submitButton.disabled = true;
+
+    let url ='/api/facts';
+    url += '?text=' + encodeURIComponent(textEl.value);
+    url += '&lat=' + encodeURIComponent(factLatEl.value);
+    url += '&long=' + encodeURIComponent(factLongEl.value);
+
+    const response = await fetch(url, {method:'post'});
+
+    submitButton.disabled = false;
+    submitButton.textContent = 'submit';
+
+    if (response.ok) {
+        factSubmitted();
+    } else {
+        console.error('error posting a story', response.status, response.statusText);
+    }
+  }
+
+  function factSubmitted(){
+    document.getElementById('factText').value='';
+    document.getElementById('factLat').value='';
+    document.getElementById('factLong').value='';
+
+    loadFacts();
+  }
 
 
 //Google map API
   function initMap() {
     let portsmouth = {lat: 50.796, lng: -1.072974};
+
+    let removePoi =[
+    {
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [
+              { visibility: "off" }
+            ]
+        }
+    ];
+
     const map = new google.maps.Map(document.getElementById('mapholder'), {
       zoom: 16,
-      center: portsmouth
+      center: portsmouth,
+      styles: removePoi
     });
 
     loadFacts(map);
