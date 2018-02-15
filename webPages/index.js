@@ -8,19 +8,12 @@ function initialize(){
   function initMap() {
     let portsmouth = {lat: 50.796, lng: -1.072974};
     const map = new google.maps.Map(document.getElementById('mapholder'), {
-      zoom: 14,
+      zoom: 16,
       center: portsmouth
     });
 
     loadFacts(map);
   }
-
-
-  function addMarker(x, y, text){
-
-
-  }
-
 
 async function loadFacts(map){
   try {
@@ -50,9 +43,16 @@ window.main.innerHTML='';
   facts.forEach((fact) => {
     let marker = new google.maps.Marker({
               map: map,
-              icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
               position:{lat:fact.x,lng:fact.y}
             });
+
+    let infoWindow = new google.maps.infoWindow({
+      content:'<h1>' + fact.text + '</h1>'
+    });
+
+    marker.addEventListener('click', function(){
+      
+    });
 
   });
 };
