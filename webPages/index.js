@@ -1,10 +1,28 @@
 window.addEventListener('load', initialize);
 
 function initialize(){
-  loadFacts();
 }
 
-async function loadFacts(){
+
+//Google map API
+  function initMap() {
+    let portsmouth = {lat: 50.796, lng: -1.072974};
+    const map = new google.maps.Map(document.getElementById('mapholder'), {
+      zoom: 14,
+      center: portsmouth
+    });
+
+    loadFacts(map);
+  }
+
+
+  function addMarker(x, y, text){
+
+
+  }
+
+
+async function loadFacts(map){
   try {
 
     //TELL THE USER WE'RE WAITING FOR THE FACTS THAT THEY WANT
@@ -17,7 +35,7 @@ async function loadFacts(){
     if (!response.ok) throw response;
 
     //DO SOME STUFF WITH THE FACTS ONCE WE HAVE THEM FROM THE SERVER
-    displayFacts(await response.json());
+    displayFacts(await response.json(),map);
 
 
   }catch (e) {
@@ -26,23 +44,15 @@ async function loadFacts(){
   }
 }
 
-function displayFacts(facts){
+function displayFacts(facts,map){
 window.main.innerHTML='';
 
   facts.forEach((fact) => {
-    const marker = document.createElement('div');
-    marker.classList.add('factMarker');
-    marker.setAttribute("style", "left: " + fact.x + "px;" + "bottom: " + fact.y + "px;");
-    window.main.appendChild(marker);
+    let marker = new google.maps.Marker({
+              map: map,
+              icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+              position:{lat:fact.x,lng:fact.y}
+            });
 
-    const locationIcon = document.createElement("i");
-    locationIcon.classList.add('material-icons');
-    locationIcon.innerHTML = 'location_on';
-    marker.appendChild(locationIcon);
-
-    const info = document.createElement('div');
-    info.classList.add('factText');
-    info.innerHTML = fact.text;
-    marker.appendChild(info);
   });
 };

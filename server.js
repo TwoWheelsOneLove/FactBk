@@ -16,8 +16,6 @@ app.use('/', express.static(config.webpages, {extensions: ['html'] }));
 
 //API FUNCTIONS
 app.get('/api/facts', sendFacts);
-app.get('/api/user', verifyUser);
-
 
 // start server
 app.listen(8080, (err) => {

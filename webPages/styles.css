@@ -2,6 +2,22 @@
   margin: 0;
   padding: 0;
 }
+html {
+  overflow: hidden;
+}
+main {
+  z-index: 10;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 1em;
+  font-family: sans-serif;
+  color: #00ABFF;
+}
+
 /* LOGIN SPECIFIC STYLES */
 #login {
   font-family: sans-serif;
@@ -75,26 +91,11 @@ body {
   background-image: url('pmth.PNG');
 }
 
-.factMarker {
-  position: fixed;
-  color: red;
-}
+/* MAP STYLING */
 
-.factText{
-  font-family: sans-serif;
-  display: none;
-  color: black;
-}
-
-.factMarker:hover {
-  background-color: none;
-  width: auto;
-  cursor: pointer;
-  color: gray;
-}
-
-.factMarker:hover .factText{
-  display: block;
+#mapholder {
   position: absolute;
-  bottom: 0px;
-}
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+ }
