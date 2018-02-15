@@ -104,16 +104,24 @@ body {
 
 /*GOOGLE INFO WINDOW*/
  .gm-style .gm-style-iw {
+   padding:0;
+   margin:0;
+   height: auto;
+   max-height: none;
 }
 
 .gm-style .gm-style-iw p{
    color: #00abff;
+   max-width: 20vw;
 }
 
 .gm-style .gm-style-iw button{
-   border:none;
+   border:solid black thin;
    background-color:rgba(0,0,0,0);
-   color:#00abff;
+   color:white;
    outline: none;
    cursor:pointer;
+   float: left;
+   width: 50%;
+   background-color: #00abff;
 }

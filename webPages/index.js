@@ -19,6 +19,7 @@ async function loadFacts(map){
   try {
 
     //TELL THE USER WE'RE WAITING FOR THE FACTS THAT THEY WANT
+    window.main.setAttribute("style","display:block;")
     window.main.innerHTML='Gathering facts...';
 
     let url = '/api/facts';
@@ -39,6 +40,7 @@ async function loadFacts(map){
 
 function displayFacts(facts,map){
 window.main.innerHTML='';
+window.main.setAttribute("style","display:none;")
 
   facts.forEach((fact) => {
     let marker = new google.maps.Marker({
