@@ -78,3 +78,64 @@ h1 {
     justify-self: center;
     display: none;
   }
+
+/*stick navigation bar at bottom of page*/
+.bottombar{
+	background-color: #444;
+	 overflow: hidden;
+	 position: fixed;
+	 bottom: 0;
+	 width: 100%;
+}
+
+/*styling of links inside navigation bar*/
+.bottombar a{
+	float:left;
+	display:block;
+	color: #f2f2f2;
+	text-align:center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size:17px;
+}
+
+/*Change the colour of links on hover*/
+.bottombar a:hover{
+	background-color:#ff7c26;
+	color:black;
+}
+
+.bottombar a.active{
+	background-color:#ff7c26;
+	colour:white;
+}
+
+/*hide link that should open and close the bottombar on small screens*/
+.bottombar .icon{
+	display:none;
+}
+
+/*When the screen is less than 600 pixels wide, hide all links except
+the first one "Home". Show the link that contains open and close the bottombar (.icon) */
+@media screen and (max-width:600px){
+	.bottombar a:not(:first-child){display:none;}
+	.bottombar a.icon{
+		float:right;
+		display:block;
+	}
+}
+/*the responsive class is added to the bottombar with Javascript when the user clicks on the icon.
+This class make the bottombar look good on small screens (display the links vertically instead of horizontally)*/
+@media screen and (max-width: 600px) {
+  .bottombar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+	.bottombar.responsive a{
+		float: none;
+		display: block;
+		text-align:left;
+	}
+}
