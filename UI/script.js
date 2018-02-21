@@ -26,3 +26,14 @@
     }
 
   })
+
+/*Change between adding and removing the responsive class to the bottombar
+when the user clicks the icon*/ 
+   function myFunction2(){
+     let x = document.getElementById("factbkBar");
+     if (x.className === "bottombar"){
+         x.className += "responsive";
+     }else {
+       x.className = "bottombar";
+     }
+   }
