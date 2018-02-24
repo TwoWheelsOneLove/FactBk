@@ -92,6 +92,19 @@ h1 {
 	}
 
 
+	#addFact {
+		background: rgba(0,0,0,0.7);/*grid colour & opacity*/
+		height: 325px;
+		width: 410px;
+		padding: 25px;
+		margin: 25px;
+		grid-area: a;
+		align-self: center;
+		justify-self: center;
+		display: none;
+	}
+
+
 .navbar {
 	background: rgba(0,0,0,0.7);/*grid colour & opacity*/
   overflow: hidden;
@@ -131,4 +144,3 @@ ul {
 li {
     float: left;
 }
-
