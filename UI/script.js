@@ -2,9 +2,12 @@ let p = document.getElementsByClassName('item1')[0]
 let x = document.getElementById("myDIV");
 let y = document.getElementById("nav");
 let z = document.getElementById("myDIV2");
+let a = document.getElementById("addFact");
 let btn = document.getElementById("btn");
 let snd = document.getElementById("send");
+let submit = document.getElementById("submitFact");
 let cls = document.getElementById("close");
+let cls2 = document.getElementById("close2");
 let btn2 = document.getElementById("btn2");
 let btn3 = document.getElementById('btn3');
 let item = document.getElementById('here').addEventListener('click',() =>{
@@ -51,6 +54,7 @@ else {
     p.style.display = "block";
     y.style.display = 'none'
     z.style.display = "none"
+    a.style.display = "none";
 }
 
 })
@@ -67,12 +71,35 @@ else {
 })
 
 
+submit.addEventListener('click',() =>{
+if (a.style.display ==="block") {
+    a.style.display = "none";
+  }
+else {
+    a.style.display = "none"
+}
+
+})
+
+
+
 cls.addEventListener('click',() =>{
 if (z.style.display ==="block") {
     z.style.display = "none";
   }
 else {
     z.style.display = "none"
+}
+
+})
+
+
+cls2.addEventListener('click',() =>{
+if (a.style.display ==="block") {
+    a.style.display = "none";
+  }
+else {
+    a.style.display = "none"
 }
 
 })
@@ -85,5 +112,19 @@ if (x.style.display ==="block") {
   }
 else {
     x.style.display = "block";
+    a.style.display = "none";
+
+}
+}
+
+
+function myFunction3() {
+let a = document.getElementById("addFact");
+if (a.style.display ==="block") {
+    a.style.display = "none";
+  }
+else {
+    a.style.display = "block";
+    z.style.display="none";
 }
 }
