@@ -63,9 +63,34 @@ function initialize(){
     });
         directionsDisplay.setMap(map);
         directionsDisplay.setPanel(document.getElementById('panel'));
+        infoWindow = new google.maps.InfoWindow;
         //document.getElementById("Direct").onclick = function () { calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903)); };
         loadFacts(map);
       //  calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903));
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          var image = 'myLocation.png';
+           var location = new google.maps.Marker({
+             position: pos,
+             map: map,
+             icon: image
+           });
+
+          map.setCenter(pos);
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+
   }
 
   function calculateAndDisplayRoute(directionsService, directionsDisplay, start, end) {
