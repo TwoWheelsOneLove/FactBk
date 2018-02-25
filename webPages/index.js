@@ -42,11 +42,7 @@ function initialize(){
     loadFacts();
   }
 
-
-//Google map API
   function initMap() {
-    let portsmouth = {lat: 50.796, lng: -1.072974};
-
     let removePoi =[
     {
         featureType: "poi",
@@ -57,13 +53,33 @@ function initialize(){
         }
     ];
 
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    var portsmouth = new google.maps.LatLng(50.796162, -1.073248);
     const map = new google.maps.Map(document.getElementById('mapholder'), {
       zoom: 16,
       center: portsmouth,
       styles: removePoi
     });
+        directionsDisplay.setMap(map);
+        directionsDisplay.setPanel(document.getElementById('panel'));
+        //document.getElementById("Direct").onclick = function () { calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903)); };
+        loadFacts(map);
+      //  calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903));
+  }
 
-    loadFacts(map);
+  function calculateAndDisplayRoute(directionsService, directionsDisplay, start, end) {
+    directionsService.route({
+      origin: start,
+      destination: end,
+      travelMode: 'DRIVING'
+    }, function(response, status) {
+      if (status === 'OK') {
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
   }
 
 async function loadFacts(map){

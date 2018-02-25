@@ -39,7 +39,6 @@ main {
 }
 
 
-
 /* LOGIN SPECIFIC STYLES */
 #login {
   font-family: sans-serif;
@@ -109,11 +108,20 @@ main {
 /* MAP STYLING */
 
 #mapholder {
-  position: absolute;
   height: 120vh;
   width: 120vw;
   z-index: 0;
  }
+
+#panel {
+  height: 100%;
+  width: 33%;
+  margin-left: 66%;
+  /*background: white;*/
+  z-index: 100;
+  position: absolute;
+}
+
 
 /*GOOGLE INFO WINDOW*/
  .gm-style .gm-style-iw {
