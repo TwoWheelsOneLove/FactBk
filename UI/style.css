@@ -3,7 +3,7 @@ body{
 }
 
 /*grid properties*/
-.item1 {
+#logIn {
   background: rgba(0,0,0,0.7);/*grid colour & opacity*/
   height: 210px;
   width: 400px;
@@ -67,7 +67,9 @@ h1 {
     outline:0;
   }
 
-  #myDIV {
+
+/*grid properties*/
+  #accountForm {
     background: rgba(0,0,0,0.7);/*grid colour & opacity*/
     height: 280px;
     width: 410px;
@@ -79,7 +81,8 @@ h1 {
     display: none;
   }
 
-	#myDIV2 {
+/*grid properties*/
+	#feedbackForm {
 		background: rgba(0,0,0,0.7);/*grid colour & opacity*/
 		height: 280px;
 		width: 410px;
@@ -91,7 +94,7 @@ h1 {
 		display: none;
 	}
 
-
+/*grid properties*/
 	#addFact {
 		background: rgba(0,0,0,0.7);/*grid colour & opacity*/
 		height: 325px;
