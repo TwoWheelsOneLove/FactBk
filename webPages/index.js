@@ -53,9 +53,9 @@ function initialize(){
         }
     ];
 
-    var directionsService = new google.maps.DirectionsService();
-    var directionsDisplay = new google.maps.DirectionsRenderer();
-    var portsmouth = new google.maps.LatLng(50.796162, -1.073248);
+    let directionsService = new google.maps.DirectionsService();
+    let directionsDisplay = new google.maps.DirectionsRenderer();
+    let portsmouth = new google.maps.LatLng(50.796162, -1.073248);
     const map = new google.maps.Map(document.getElementById('mapholder'), {
       zoom: 16,
       center: portsmouth,
@@ -70,13 +70,13 @@ function initialize(){
 
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-          var pos = {
+          let pos = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
 
-          var image = 'myLocation.png';
-           var location = new google.maps.Marker({
+          let image = 'myLocation.png';
+           let location = new google.maps.Marker({
              position: pos,
              map: map,
              icon: image
