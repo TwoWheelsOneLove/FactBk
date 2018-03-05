@@ -9,7 +9,7 @@ const sql = mysql.createConnection(config.mysql);
 
 module.exports.listFacts = () => {
   return new Promise((resolve, reject) => {
-    let query = 'select fact.factTitle, fact.id, fact.text, fact.locX, fact.locY from fact'
+    let query = 'select fact.factTitle, fact.id, fact.text, fact.locX, fact.locY, fact.imgSrc from fact'
 
 
 
@@ -27,6 +27,7 @@ module.exports.listFacts = () => {
            x: row.locX,
            y: row.locY,
            text: row.text,
+           imageSource: row.imgSrc,
          });
        });
 

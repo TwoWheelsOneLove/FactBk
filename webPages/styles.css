@@ -1,4 +1,4 @@
-* {
+AF* {
   margin: 0;
   padding: 0;
 }
@@ -23,7 +23,7 @@ main {
 /*Adding Facts form*/
 #addFact {
   position: absolute;
-  z-index: 100;
+  z-index: 110;
   left: 99.5vw;
   width: 50vw;
   height: 100vh;
@@ -111,6 +111,9 @@ main {
   height: 120vh;
   width: 120vw;
   z-index: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
  }
 
 #panel {
@@ -120,6 +123,8 @@ main {
   /*background: white;*/
   z-index: 100;
   position: absolute;
+
+  display: none;
 }
 
 
