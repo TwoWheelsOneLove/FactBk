@@ -25,6 +25,7 @@ main {
   position: absolute;
   z-index: 110;
   left: 99.5vw;
+  top: 0;
   width: 50vw;
   height: 100vh;
   background-color: white;
