@@ -6,6 +6,29 @@ const config = require('./config');
 
 const sql = mysql.createConnection(config.mysql);
 
+module.exports.checkLogin = (email, pass) =>{
+  return new Promise((resolve, reject) => {
+
+      sql.query(sql.format('select * from user where email = ? and password = ?', [email,pass]), (err, result) => {
+        if (err) {
+          reject(['failed sql query', err]);
+          return;
+        }
+
+        const retval = [];
+
+        result.forEach((row)=>{
+          retval.push({
+            email: row.email,
+            pass:row.password
+          });
+        });
+
+
+        resolve({retval});
+      });
+    });
+};
 
 module.exports.listFacts = () => {
   return new Promise((resolve, reject) => {
@@ -31,7 +54,7 @@ module.exports.listFacts = () => {
          });
        });
 
-  resolve(retval);
+       resolve(retval);
     });
 
   });

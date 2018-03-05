@@ -1,7 +1,49 @@
 window.addEventListener('load', initialize);
 
 function initialize(){
-  document.querySelector('.submitFact').addEventListener('click',submitFact)
+  document.querySelector('.submitFact').addEventListener('click',submitFact);
+  window.LoginButton.addEventListener('click', login);
+  window.SignupButton.addEventListener('click', signup);
+
+  window.log.addEventListener('click', openLogin);
+  window.sign.addEventListener('click', openSignin);
+}
+
+
+//logIn system
+function openLogin(){
+  window.log.setAttribute("style","color:#00ABFF; background-color: white;")
+  window.sign.setAttribute("style","color:white; background-color: #00ABFF;")
+
+  window.logForm.setAttribute("style","display:grid;")
+  window.signForm.setAttribute("style","display:none;")
+}
+
+function openSignin(){
+  window.sign.setAttribute("style","color:#00ABFF; background-color: white;")
+  window.log.setAttribute("style","color:white; background-color: #00ABFF;")
+
+  window.logForm.setAttribute("style","display:none;")
+  window.signForm.setAttribute("style","display:grid;")
+}
+
+async function login(){
+  const email = document.getElementById('logEmail');
+  const pass = document.getElementById('logPass');
+
+  let url = '/api/login';
+  url += '?email=' + encodeURIComponent(email.value);
+  url += '&pass=' + encodeURIComponent(pass.value);
+  
+  //Check login against logins on server
+  const response = await fetch(url);
+  if (!response.ok) throw response;
+
+  loadFacts();
+}
+
+async function signup(){
+  console.log('user signed up');
 }
 
 //Add a new fact to the db
@@ -65,7 +107,7 @@ function initialize(){
         directionsDisplay.setPanel(document.getElementById('panel'));
         infoWindow = new google.maps.InfoWindow;
         //document.getElementById("Direct").onclick = function () { calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903)); };
-        loadFacts(map);
+
       //  calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903));
 
       if (navigator.geolocation) {

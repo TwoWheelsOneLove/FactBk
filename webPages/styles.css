@@ -1,4 +1,4 @@
-AF* {
+* {
   margin: 0;
   padding: 0;
 }
@@ -75,18 +75,20 @@ main {
   margin-bottom: 2em;
 }
 
-#login form {
+#logForm {
   width: 80%;
   margin:auto;
+  display: grid;
+  grid-template-rows: 1fr;
 }
 
-#login form input{
+#logForm input{
   border: thin #00abff solid;
   height: 2em;
   margin-bottom: 1em;
 }
 
-#login form button {
+#logForm button {
   background-color: #00abff;
   color: white;
   height: 2em;
@@ -95,14 +97,26 @@ main {
   border-radius: .5em;
 }
 
-#logForm {
-  display: grid;
+#signForm {
+  width: 80%;
+  margin:auto;
+  display: none;
   grid-template-rows: 1fr;
 }
 
-#signForm {
-  display: none;
-  grid-template-rows: 1fr;
+#signForm input{
+  border: thin #00abff solid;
+  height: 2em;
+  margin-bottom: 1em;
+}
+
+#signForm button {
+  background-color: #00abff;
+  color: white;
+  height: 2em;
+  margin:auto;
+  width: 50%;
+  border-radius: .5em;
 }
 
 
