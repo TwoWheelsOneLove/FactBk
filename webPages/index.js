@@ -84,14 +84,22 @@ function initialize(){
 
           map.setCenter(pos);
         }, function() {
-          handleLocationError(true, infoWindow, map.getCenter());
+          handleLocationError(map, true, infoWindow, map.getCenter());
         });
       } else {
         // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
+        handleLocationError(map, false, infoWindow, map.getCenter());
       }
 
   }
+
+  function handleLocationError(map, browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+  infoWindow.open(map);
+}
 
   function calculateAndDisplayRoute(directionsService, directionsDisplay, start, end) {
     directionsService.route({
@@ -141,7 +149,7 @@ window.main.setAttribute("style","display:none;")
             });
 
     let infoWindow = new google.maps.InfoWindow({
-      content:'<h1>'+ fact.title +'</h1> <p>' + fact.text + '</p><button><i class="material-icons">directions_walk</i></button></p><button><i class="material-icons">email</i></button>'
+      content:'<img src=' + fact.imageSource + '> <h1>'+ fact.title +'</h1> <p>' + fact.text + '</p><button><i class="material-icons">directions_walk</i></button></p><button><i class="material-icons">email</i></button>'
     });
 
     marker.addListener('click', function(){
