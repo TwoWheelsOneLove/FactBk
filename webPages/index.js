@@ -191,7 +191,7 @@ window.main.setAttribute("style","display:none;")
             });
 
     let infoWindow = new google.maps.InfoWindow({
-      content:'<img src=' + fact.imageSource + '> <h1>'+ fact.title +'</h1> <p>' + fact.text + '</p><button><i class="material-icons">directions_walk</i></button></p><button><i class="material-icons">email</i></button>'
+      content:'<img src=' + fact.imageSource + '> <h1>'+ fact.title +'</h1> <p>' + fact.text + '</p><button><i class="material-icons">directions_walk</i></button></p><button><i class="material-icons"> onclick="window.open("https://mail.google.com/mail/?view=cm&fs=1&su=Check%20Out%20This%20Fact%20From%20FactBK&body=fact.txt");">email</i></button>'
     });
 
     marker.addListener('click', function(){
