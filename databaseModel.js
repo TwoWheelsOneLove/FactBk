@@ -18,6 +18,7 @@ module.exports.checkLogin = (email, pass) =>{
         const retval = [];
 
         result.forEach((row)=>{
+
           retval.push({
             email: row.email,
             pass:row.password
@@ -25,7 +26,7 @@ module.exports.checkLogin = (email, pass) =>{
         });
 
 
-        resolve({retval});
+        resolve(retval);
       });
     });
 };

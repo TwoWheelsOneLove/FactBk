@@ -34,13 +34,18 @@ async function login(){
   let url = '/api/login';
   url += '?email=' + encodeURIComponent(email.value);
   url += '&pass=' + encodeURIComponent(pass.value);
-  
+
   //Check login against logins on server
   const response = await fetch(url);
-  if (!response.ok) throw response;
 
-  loadFacts();
-}
+  if (!response.ok) {
+    console.log("Username or password incorrect");
+    throw response;
+  }else{
+
+    loadFacts(map);
+  }
+};
 
 async function signup(){
   console.log('user signed up');
@@ -81,7 +86,7 @@ async function signup(){
     document.getElementById('factLat').value='';
     document.getElementById('factLong').value='';
 
-    loadFacts();
+    loadFacts(map);
   }
 
   function initMap() {
@@ -98,7 +103,7 @@ async function signup(){
     let directionsService = new google.maps.DirectionsService();
     let directionsDisplay = new google.maps.DirectionsRenderer();
     let portsmouth = new google.maps.LatLng(50.796162, -1.073248);
-    const map = new google.maps.Map(document.getElementById('mapholder'), {
+    window.map = new google.maps.Map(document.getElementById('mapholder'), {
       zoom: 16,
       center: portsmouth,
       styles: removePoi

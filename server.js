@@ -60,9 +60,19 @@ function editFact(){
 
 }
 
-function validateLogin(req,res){
-  const retval = await db.checkLogin(req.query.email,req.query.pass);
-  
+async function validateLogin(req,res){
+  try {
+    const retval = await db.checkLogin(req.query.email,req.query.pass);
+
+    if (retval.length === 1){
+      res.send(200);
+    }else{
+      res.send(401);
+    }
+
+  } catch (e) {
+    error(res, e);
+  }
 }
 
 
