@@ -33,7 +33,7 @@ module.exports.checkLogin = (email, pass) =>{
 
 module.exports.listFacts = () => {
   return new Promise((resolve, reject) => {
-    let query = 'select fact.factTitle, fact.id, fact.text, fact.locX, fact.locY, fact.imgSrc from fact'
+    let query = 'select fact.factTitle, fact.id, fact.text, fact.locX, fact.locY, fact.imgSrc from fact order by fact.id desc'
 
 
 

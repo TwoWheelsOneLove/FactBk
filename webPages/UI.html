@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<head>
+  <title>FactBK</title>
+  <link rel="stylesheet" type="text/css" href="styles2.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="index.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoR_-M17K2YS4KOIdPj4Rg0KmFfoHqkkE&callback=initMap"></script>
+</head>
+
+<body>
+
+
+  <nav id="nav">
+    <i id="showMap" class="material-icons md-48">map</i>
+    <i id="showAdmin" class="material-icons md-48">mode_edit</i>
+    <i id="showInfo" class="material-icons md-48">info_outline</i>
+    <i id="logOutBtn" class="material-icons md-48">exit_to_app</i>
+  </nav>
+
+  <p id="status">
+  </p>
+
+  <main id="main">
+
+    <section class="page">
+      <h2>FACTBK</h2>
+      <p>Welcome to factBK, a fact finding app for residents of portsmouth!</p>
+      <div id="login">
+        <button id="log" class="active">LOG IN</button>
+        <button id="sign">SIGN UP</button>
+
+        <section id="logForm">
+          <input id="logEmail" type="text" placeholder="Email"></input>
+          <input id="logPass" type="password" placeholder="Password"></input>
+          <button id="LoginButton">Log In</button>
+        </section>
+
+        <section id="signForm">
+          <input type="text" placeholder="Email"></input>
+          <input type="password" placeholder="Password"></input>
+          <button id="SignupButton">Create Account</button>
+        </section>
+      </div>
+    </section>
+
+
+
+
+    <div id="mapholder" class="page">
+    </div>
+
+    <section class="page">
+      <div id="admin">
+        <div id="listFacts">
+
+        </div>
+
+        <div id="addFact">
+          <input id="factTitle" type="text" placeholder="Fact Title"></input>
+          <input id="factText" type="text" placeholder="Fact Text"></input>
+          <input id="factLat" type="text"  placeholder="Fact Lattitude"></input>
+          <input id="factLong" type="text" placeholder="Fact Longitude"></input>
+          <input id="factImgSrc" type="text" placeholder="Image Source"></input>
+          <button class="submitFact"><i class="material-icons md-48">add_location</i></button>
+        </div>
+      </div>
+
+
+
+  </main>
+
+
+
+
+  <div id="panel"></div>
+
+
+
+
+</body>

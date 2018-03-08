@@ -5,7 +5,6 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="index.js"></script>
-
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoR_-M17K2YS4KOIdPj4Rg0KmFfoHqkkE&callback=initMap"></script>
 </head>
 
@@ -21,25 +20,34 @@
   </div>
 
   <main id="main">
-    <section id="login">
-      <button id="log" class="active">LOG IN</button>
-      <button id="sign">SIGN UP</button>
 
-      <section id="logForm">
-        <input id="logEmail" type="text" placeholder="Email"></input>
-        <input id="logPass" type="text" placeholder="Password"></input>
-        <button id="LoginButton">Log In</button>
-      </section>
+    <div id="loginPage">
+      <section id="login">
+        <button id="log" class="active">LOG IN</button>
+        <button id="sign">SIGN UP</button>
 
-      <section id="signForm">
-        <input type="text" placeholder="Email"></input>
-        <input type="text" placeholder="Password"></input>
-        <button id="SignupButton">Create Account</button>
+        <section id="logForm">
+          <input id="logEmail" type="text" placeholder="Email"></input>
+          <input id="logPass" type="password" placeholder="Password"></input>
+          <button id="LoginButton">Log In</button>
+        </section>
+
+        <section id="signForm">
+          <input type="text" placeholder="Email"></input>
+          <input type="password" placeholder="Password"></input>
+          <button id="SignupButton">Create Account</button>
+        </section>
+
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
       </section>
-    </section>
+    </div>
   </main>
 
   <div id="panel"></div>
-  <div id="mapholder"></div>
+
+  <div id="ui">
+    <div id="mapholder"></div>
+  </div>
+
 
 </body>
