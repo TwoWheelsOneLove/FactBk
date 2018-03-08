@@ -17,6 +17,7 @@ app.use('/', express.static(config.webpages, {extensions: ['html'] }));
 //API FUNCTIONS
 app.get('/api/facts', sendFacts);
 app.post('/api/facts', addFact);
+app.delete('/api/facts/:id', deleteFact)
 app.get('/api/login', validateLogin);
 
 // start server
@@ -52,8 +53,17 @@ async function addFact(req,res){
 
 
 
-function deleteFact(){
-
+async function deleteFact(req, res){
+    try {
+      await db.deleteFact(req.params.id);
+      res.sendStatus(200);
+    } catch (e) {
+      if (e.status === 'gone') {
+      res.sendStatus(410); // already gone
+    } else {
+      error(res, e);
+    }
+  }
 }
 
 function editFact(){

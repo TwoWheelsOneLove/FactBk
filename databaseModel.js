@@ -83,3 +83,18 @@ module.exports.addFact = (title, text, lat, long) => {
     });
     });
   };
+
+
+  module.exports.deleteFact = (id) => {
+  return new Promise((resolve, reject) => {
+
+        sql.query(sql.format('DELETE FROM fact WHERE id=?', [id]), (err) => {
+            if (err) {
+              reject(['failed sql delete', err]);
+              return;
+            }
+
+            resolve();
+          });
+    });
+  };

@@ -246,9 +246,10 @@ function displayFacts(facts,map){
   });
 };
 
-function requestDelete(e){
+async function requestDelete(e){
   if(e.target.dataset.id && window.confirm('Are you sure you want to delete this fact?')){
-      console.log('request to delete fact' + dataset.id);
+    await fetch('/api/facts/' + e.target.dataset.id, {method:'DELETE'});
+    loadFacts(map);
     }
 }
 
