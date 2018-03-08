@@ -12,6 +12,8 @@ function initialize(){
   window.showMap.addEventListener('click', goToMap);
   window.showAdmin.addEventListener('click', goToAdmin)
   window.logOutBtn.addEventListener('click', logOut);
+  window.showInfo.addEventListener('click',goToInfo);
+
 }
 
 //logIn system
@@ -76,6 +78,10 @@ function logOut(){
 function goToAdmin(){
     window.main.setAttribute("style","top: -200vh;");
     loadFacts(map);
+}
+
+function goToInfo(){
+  window.main.setAttribute("style", "top: -300vh;")
 }
 
 //Add a new fact to the db
@@ -225,9 +231,10 @@ function displayFacts(facts,map){
   facts.forEach((fact) => {
 
     addToFactList(fact);
-
+    let markerIcon = '/images/marker.png';
     let marker = new google.maps.Marker({
               map: map,
+              icon:markerIcon,
               position:{lat:fact.x,lng:fact.y}
             });
 
