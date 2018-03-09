@@ -2,7 +2,7 @@ body{
 	background-image: url("background.png");
 }
 
-/*grid properties*/
+/*login form style*/
 #logIn {
   background: rgba(0,0,0,0.7);/*grid colour & opacity*/
   height: 210px;
@@ -28,8 +28,8 @@ body{
     cursor: pointer;
 }
 
-.button1 {border-radius: 100%;}
-.button1 {width: 100px;}
+.signButton {border-radius: 100%;}
+.signButton {width: 100px;}
 
 button:active{
     background:grey;
@@ -68,7 +68,7 @@ h1 {
   }
 
 
-/*grid properties*/
+/*account form style*/
   #accountForm {
     background: rgba(0,0,0,0.7);/*grid colour & opacity*/
     height: 280px;
@@ -81,7 +81,7 @@ h1 {
     display: none;
   }
 
-/*grid properties*/
+/*feedback form style*/
 	#feedbackForm {
 		background: rgba(0,0,0,0.7);/*grid colour & opacity*/
 		height: 280px;
@@ -94,7 +94,7 @@ h1 {
 		display: none;
 	}
 
-/*grid properties*/
+/*fact form style*/
 	#addFact {
 		background: rgba(0,0,0,0.7);/*grid colour & opacity*/
 		height: 325px;
@@ -107,7 +107,7 @@ h1 {
 		display: none;
 	}
 
-
+/*navigation bar style*/
 .navbar {
 	background: rgba(0,0,0,0.7);/*grid colour & opacity*/
   overflow: hidden;
@@ -147,3 +147,4 @@ ul {
 li {
     float: left;
 }
+
