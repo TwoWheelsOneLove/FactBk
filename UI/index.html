@@ -1,112 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>FackBk</title>
-<link rel="stylesheet" href="style.css">
+  <title>FackBk</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!--login form-->
   <div class="main">
-    <center>
-   <div id="logIn">
-    <center><h><font color="white">Log in to Fact</font><font color="Orange">Bk</font></h></center>
-    <p><label><font id = "box" color="white">&emsp;Email:&nbsp;&nbsp;</font></label>
-    <input class="textbox"  type = "text"
-    id = "myText"/>
-    </p>
-    <p><label><font id = "p" color="white">Password:</font></label>
-    <input class = "textbox"  type = "password"
-    id = "myText"/>
-    </p>
-    <center>
-    <button class="button button1" id="signInbtn">Sign in</button>
-    </center>
-    <center>
-     <p><font color="white" id="signUplnk">Haven't got an account? Create one <a onclick="switchToAccForm()">here</a></font></p>
-    </center>
-    </div>
-    </center>
-    </div>
+  <center>
+  <div id="logIn">
+  <center><h><font color="white">Log in to Fact</font><font color="Orange">Bk</font></h></center>
+  <p><label><font id = "box" color="white">&emsp;Email:&nbsp;&nbsp;</font></label>
+  <input class="textbox"  type = "text"
+  id = "myText"/>
+  </p>
+  <p><label><font id = "p" color="white">Password:</font></label>
+  <input class = "textbox"  type = "password"
+  id = "myText"/>
+  </p>
+  <center>
+  <button class="button signButton" id="signInbtn">Sign in</button>
+  </center>
+  <center>
+  <p><font color="white" id="signUplnk">Haven't got an account? Create one <a onclick="switchToAccForm()">here</a></font></p>
+  </center>
+  </div>
+  </center>
+  </div>
 
-    <div class="main">
-    <center>
-    <div id="accountForm">
-    <center><h1><font color="white">Please fill in the details below to create an account</font></h1></center>
-    <p><label><font color="white">&emsp;Name:&nbsp;&nbsp;</font></label>
-    <input class="textbox" type = "text"
-    id = "myText"/>
-    <p><label><font color="white">&emsp;email:&nbsp;&nbsp;</font></label>
-    <input class="textbox" type = "text"
-    id = "myText"/>
-    </p>
-    <p><label><font color="white">Password:</font></label>
-    <input class = "textbox" type = "password"
-    id = "myText"/>
-    </p>
-    <center>
-    <button class="button button1">Create account</button>
-    </center>
-    <p><font color="white">Fact</font><font color="Orange">Bk</font><font color="white">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Already have an account? <a id="SignInlnk"> Sign in</a></p>
-    </div>
-    </center>
-    </div>
+<!--account form-->
+  <div class="main">
+  <center>
+  <div id="accountForm">
+  <center><h1><font color="white">Please fill in the details below to create an account</font></h1></center>
+  <p><label><font color="white">&emsp;Name:&nbsp;&nbsp;</font></label>
+  <input class="textbox" type = "text"
+  id = "myText"/>
+  <p><label><font color="white">&emsp;email:&nbsp;&nbsp;</font></label>
+  <input class="textbox" type = "text"
+  id = "myText"/>
+  </p>
+  <p><label><font color="white">Password:</font></label>
+  <input class = "textbox" type = "password"
+  id = "myText"/>
+  </p>
+  <center>
+  <button class="button signButton">Create account</button>
+  </center>
+  <p><font color="white">Fact</font><font color="Orange">Bk</font><font color="white">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Already have an account? <a id="SignInlnk"> Sign in</a></p>
+  </div>
+  </center>
+  </div>
 
+  <!--feedback form-->
+  <div class="main">
+  <center>
+  <div id="feedbackForm">
+  <center><h1><font color="white">Please leave your feedback below</font></h1></center>
+  <p><label><font color="white">&emsp;Name:&nbsp;&nbsp;</font></label>
+  <input class="textbox" type = "text"
+  id = "myText"/>
+  <p><label><font color="white">&emsp;Feedback:&nbsp;&nbsp;</font></label>
+  <input class="textbox" type = "text"
+  id = "myText"/>
+  </p>
+  <center>
+  <button class="button signButton" id="send" >Send</button>
+  </center>
+  <p><font color="white">Fact</font><font color="Orange">Bk</font><font color="white">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a id="closeFForm">Close</a></p>
+  </div>
+  </center>
+  </div>
 
+<!--Fact form-->
+  <div class="main">
+  <center>
+  <div id="addFact">
+  <center><h1><font color="white">Add a Fact below</font></h1></center>
+  <p><label><font color="white">&emsp;Fact Title:&nbsp;&nbsp;</font></label>
+  <input class="textbox" type = "text"
+  id = "factTitle"/>
+  <p><label><font color="white">&emsp;Fact Text:&nbsp;&nbsp;</font></label>
+  <input class="textbox" type = "text"
+  id = "factText"/>
+  <p><label><font color="white">&emsp;Fact Lattitude:&nbsp;&nbsp;</font></label>
+  <input class="textbox" type = "text"
+  id = "factLat"/>
+  <p><label><font color="white">&emsp;Fact Longitude:&nbsp;&nbsp;</font></label>
+  <input class="textbox" type = "text"
+  id = "factLong"/>
+  </p>
+  <center>
+  <button class="button signButton" id="submitFact" >Submit Fact</button>
+  </center>
+  <p><font color="white">Fact</font><font color="Orange">Bk</font><font color="white">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a id="closeFactForm">Close</a></p>
+  </div>
+  </center>
+  </div>
 
-    <div class="main">
-    <center>
-    <div id="feedbackForm">
-    <center><h1><font color="white">Please leave your feedback below</font></h1></center>
-    <p><label><font color="white">&emsp;Name:&nbsp;&nbsp;</font></label>
-    <input class="textbox" type = "text"
-    id = "myText"/>
-    <p><label><font color="white">&emsp;Feedback:&nbsp;&nbsp;</font></label>
-    <input class="textbox" type = "text"
-    id = "myText"/>
-    </p>
-    <center>
-    <button class="button button1" id="send" >Send</button>
-    </center>
-      <p><font color="white">Fact</font><font color="Orange">Bk</font><font color="white">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a id="closeFForm">Close</a></p>
-    </div>
-    </center>
-    </div>
+<!--Navigatin bar-->
+  <ul class="navbar" id="navigation">
+  <center><li><p><font color="white">Fact</font><font color="Orange">Bk</font></p></li></center>
+  <li  style="float:right"><a id='logOutbtn'>Log out</a></li>
+  <li style="float:right"><a onclick="displayFdBckForm()" >Got feed back?</a></li>
+  <li style="float:right"><a onclick="displayAddFctForm()" >Add a fact</a></li>
+  </ul>
 
-
-    <div class="main">
-      <center>
-        <div id="addFact">
-        <center><h1><font color="white">Add a Fact below</font></h1></center>
-        <p><label><font color="white">&emsp;Fact Title:&nbsp;&nbsp;</font></label>
-        <input class="textbox" type = "text"
-        id = "factTitle"/>
-        <p><label><font color="white">&emsp;Fact Text:&nbsp;&nbsp;</font></label>
-        <input class="textbox" type = "text"
-        id = "factText"/>
-        <p><label><font color="white">&emsp;Fact Lattitude:&nbsp;&nbsp;</font></label>
-        <input class="textbox" type = "text"
-        id = "factLat"/>
-        <p><label><font color="white">&emsp;Fact Longitude:&nbsp;&nbsp;</font></label>
-        <input class="textbox" type = "text"
-        id = "factLong"/>
-        </p>
-        <center>
-        <button class="button button1" id="submitFact" >Submit Fact</button>
-        </center>
-          <p><font color="white">Fact</font><font color="Orange">Bk</font><font color="white">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a id="closeFactForm">Close</a></p>
-        </div>
-      </center>
-    </div>
-
-
-    <ul class="navbar" id="navigation">
-    <center><li><p><font color="white">Fact</font><font color="Orange">Bk</font></p></li></center>
-    <li  style="float:right"><a id='logOutbtn'>Log out</a></li>
-    <li style="float:right"><a onclick="displayFdBckForm()" >Got feed back?</a></li>
-    <li style="float:right"><a onclick="displayAddFctForm()" >Add a fact</a></li>
-    </ul>
-
-    <script src="script.js"></script>
-    <script src="index.js"></script>
+  <script src="script.js"></script>
+  <script src="index.js"></script>
 
 </body>
 </html>
+
