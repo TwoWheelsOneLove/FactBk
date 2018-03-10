@@ -6,9 +6,6 @@ function initialize(){
 
   document.querySelector('.submitFact').addEventListener('click',submitFact);
   window.LoginButton.addEventListener('click', login);
-  window.SignupButton.addEventListener('click', signup);
-  window.log.addEventListener('click', openLogin);
-  window.sign.addEventListener('click', openSignin);
   window.showMap.addEventListener('click', goToMap);
   window.showAdmin.addEventListener('click', goToAdmin)
   window.logOutBtn.addEventListener('click', logOut);
