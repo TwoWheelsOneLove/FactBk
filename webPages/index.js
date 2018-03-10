@@ -16,21 +16,37 @@ function initialize(){
 
 }
 
-//logIn system
-function openLogin(){
-  window.log.setAttribute("style","color:#00ABFF; background-color: white;")
-  window.sign.setAttribute("style","color:white; background-color: #00ABFF;")
+let main = document.getElementsByClassName('main')[0]
+let SignInlnk = document.getElementById("signUplnk");
+let accForm = document.getElementById("accountForm");
+let signInForm = document.getElementById("logIn");
+let signlnk = document.getElementById("SignInlnk");
 
-  window.logForm.setAttribute("style","display:grid;")
-  window.signForm.setAttribute("style","display:none;")
+//logIn system
+SignInlnk.addEventListener("click", switchToAccForm)
+
+function switchToAccForm() {
+  if (accForm.style.display === "block") {
+      accForm.style.display = "none";
+      signInForm.style.display = "block";
+    }
+  else {
+      accForm.style.display = "block";
+      signInForm.style.display = "none";
+  }
 }
 
-function openSignin(){
-  window.sign.setAttribute("style","color:#00ABFF; background-color: white;")
-  window.log.setAttribute("style","color:white; background-color: #00ABFF;")
+signlnk.addEventListener("click", switchToSignInForm);
 
-  window.logForm.setAttribute("style","display:none;")
-  window.signForm.setAttribute("style","display:grid;")
+function switchToSignInForm() {
+  if (signInForm.style.display === "block") {
+      signInForm.style.display = "none";
+      accForm.style.display = "block";
+    }
+  else {
+      signInForm.style.display = "block";
+      accForm.style.display = "none";
+  }
 }
 
 async function login(){
