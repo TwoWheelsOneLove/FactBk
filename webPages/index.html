@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
+<html>
 <head>
   <title>FactBK</title>
   <link rel="stylesheet" type="text/css" href="styles2.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="index.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoR_-M17K2YS4KOIdPj4Rg0KmFfoHqkkE&callback=initMap"></script>
 </head>
 
@@ -24,22 +23,32 @@
   <main id="main">
 
     <section class="page">
-      <h2>FACTBK</h2>
-      <p>Welcome to factBK, a fact finding app for residents of portsmouth!</p>
-      <div id="login">
-        <button id="log" class="active">LOG IN</button>
-        <button id="sign">SIGN UP</button>
 
-        <section id="logForm">
-          <input id="logEmail" type="text" placeholder="Email"></input>
-          <input id="logPass" type="password" placeholder="Password"></input>
-          <button id="LoginButton">Log In</button>
+      <div id="login">
+        <!--login form-->
+        <section id="logIn">
+          <h>Log in to FactBk</h>
+          <p><label>&emsp;Email:&nbsp;&nbsp;</label>
+          <input id="logEmail" class="textbox"  type = "text"/>
+          </p>
+          <p><label>Password:</label>
+          <input id="logPass" class="textbox"  type="password"/>
+          </p>
+          <button id="LoginButton" class="button" >Sign in</button>
+          <p id="signUplnk">Haven't got an account? Create one <a>here</a></p>
         </section>
 
-        <section id="signForm">
-          <input type="text" placeholder="Email"></input>
-          <input type="password" placeholder="Password"></input>
-          <button id="SignupButton">Create Account</button>
+        <!--account form-->
+        <section id="accountForm">
+          <h>Please fill in the details below to create an account</h>
+          <p><label>&emsp;email:&nbsp;&nbsp;</label>
+          <input class="textbox" type = "text"/>
+          </p>
+          <p><label>Password:</label>
+          <input class = "textbox" type = "password"/>
+          </p>
+          <button id="SignupButton" class="button">Create account</button>
+          <p>FactBk&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Already have an account? <a id="SignInlnk"> Sign in</a></p>
         </section>
       </div>
     </section>
@@ -68,9 +77,7 @@
 
     </section>
 
-
-
-      <section class="page">
+    <section class="page">
         <h2>Thank you for using FactBK</h2>
         <p>Factbk is a free to use, online fact finding application for residents of
           portsmouth who are interested in finding historical information about
@@ -82,7 +89,7 @@
         <p>The creators of FactBk reserve the rights to all code used for this
           project. For further information please contact up795987@myport.ac.uk</p>
 
-      </section>
+    </section>
   </main>
 
 
@@ -92,5 +99,5 @@
 
 
 
-
+<script src="index.js"></script>
 </body>
