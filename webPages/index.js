@@ -216,8 +216,7 @@ function goToInfo(){
 }
 
   function calculateAndDisplayRoute(directionsService, directionsDisplay, end) {
-    <input type="text" id="location"></input>
-    directionsService.route({
+  /*  directionsService.route({
       var input = document.getElementById('location');
       start = input.value;
       origin: start,
@@ -229,7 +228,7 @@ function goToInfo(){
       } else {
         window.alert('Directions request failed due to ' + status);
       }
-    });
+    });*/
   }
 
 async function loadFacts(map){
@@ -275,13 +274,8 @@ function displayFacts(facts,map){
     let infoWindow = new google.maps.InfoWindow({
       content:'<img src=' + fact.imageSource + '>' +
               '<h1>'+ fact.title +'</h1> <p>' + fact.text + '</p>' +
-<<<<<<< HEAD
               '<button><i class="material-icons">directions_walk</i></button></p>' +
               '<button><i class="material-icons" data-text='+ fact.text.split(' ').join('&#37;20') +' onclick="sendEmail(this)">email</i></button>'
-=======
-              '<button><i class="material-icons">directions_walk</i>onclick="calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.796984, -1.107903));"</button></p>' +
-              '<button><i class="material-icons">email</i></button>'
->>>>>>> efc217067d69b8dfb6ed74dea299568c322d67fe
     });
 
     marker.addListener('click', function(){
