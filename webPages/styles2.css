@@ -34,7 +34,7 @@ nav {
   width: 100vw;
   position: fixed;
   bottom: 0;
-  background-color: black;
+  background-color: rgba(0,0,0,0.5);
   z-index: 100;
   display: none;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -57,7 +57,7 @@ nav {
 }
 
 nav i{
-  color: gray;
+  color: white;
   text-align: center;
   border-right: gray thin solid;
   cursor: pointer;
@@ -151,14 +151,14 @@ nav i:hover {
 }
 
 #admin {
-  height: 95vh;
-  padding-bottom: 10vh;
+  height: 100vh;
+  background-color: white;
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
 
 #addFact {
-  height: 95vh;
+  height: 93vh;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr;
@@ -166,7 +166,8 @@ nav i:hover {
 
 #listFacts {
   background-color: white;
-  height: 95vh;
+  padding-top: 3vh;
+  height: 92vh;
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   overflow: hidden;
@@ -190,12 +191,13 @@ nav i:hover {
   grid-template-columns: 3fr 1fr;
   border-bottom: solid #FF9600 thin;
   border-right: solid #FF9600 thin;
-  height: 2em;
+  min-height: 2em;
+  max-height: 4em;
 }
 
 .fact p {
   color: #FF9600;
-  font-size: .5em;
+  font-size: 1em;
 }
 
 
@@ -204,11 +206,14 @@ nav i:hover {
 
 /*GOOGLE INFO WINDOW*/
 .gm-style .gm-style-iw {
-  padding:0;
+  /*padding:0;
   margin:0;
   height: auto;
   max-height: none;
-  width: 30vw;
+  width: 30vw;*/
+
+  width: 100vw;
+  height: 100vh;
 }
 
 .gm-style .gm-style-iw img{
@@ -226,7 +231,7 @@ nav i:hover {
 .gm-style .gm-style-iw button{
    border:solid black thin;
    background-color:rgba(0,0,0,0);
-   color:black;
+   color:white;
    outline: none;
    cursor:pointer;
    float: left;

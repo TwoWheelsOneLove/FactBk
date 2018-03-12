@@ -93,6 +93,8 @@ function setStatus(text){
   let status = document.getElementById('status');
   status.textContent=text;
   status.setAttribute("style","opacity: 1; top:0;");
+
+  window.setTimeout(clearStatus, 5000);
 }
 
 function showNav(){
