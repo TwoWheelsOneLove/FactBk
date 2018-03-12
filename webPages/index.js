@@ -168,9 +168,9 @@ function goToInfo(){
         }
     ];
 
-    let directionsService = new google.maps.DirectionsService();
-    let directionsDisplay = new google.maps.DirectionsRenderer();
-    let portsmouth = new google.maps.LatLng(50.796162, -1.073248);
+    window.directionsService = new google.maps.DirectionsService();
+    window.directionsDisplay = new google.maps.DirectionsRenderer();
+    window.portsmouth = new google.maps.LatLng(50.796162, -1.073248);
     window.map = new google.maps.Map(document.getElementById('mapholder'), {
       zoom: 16,
       center: portsmouth,
@@ -215,12 +215,18 @@ function goToInfo(){
   infoWindow.open(map);
 }
 
-  function calculateAndDisplayRoute(directionsService, directionsDisplay, end) {
-  /*  directionsService.route({
-      var input = document.getElementById('location');
-      start = input.value;
-      origin: start,
-      destination: end,
+  function calculateAndDisplayRoute(fact) {
+    let factLat = fact.dataset.lat;
+    let factLong = fact.dataset.long;
+
+    console.log(factLat);
+    console.log(factLong);
+
+    document.getElementById('panel').setAttribute("style","display: block;");
+    let dest = new google.maps.LatLng(factLat, factLong);
+    directionsService.route({
+      origin: portsmouth,
+      destination: dest,
       travelMode: 'DRIVING'
     }, function(response, status) {
       if (status === 'OK') {
@@ -228,7 +234,7 @@ function goToInfo(){
       } else {
         window.alert('Directions request failed due to ' + status);
       }
-    });*/
+    });
   }
 
 async function loadFacts(map){
@@ -274,7 +280,7 @@ function displayFacts(facts,map){
     let infoWindow = new google.maps.InfoWindow({
       content:'<img src=' + fact.imageSource + '>' +
               '<h1>'+ fact.title +'</h1> <p>' + fact.text + '</p>' +
-              '<button data-lat='+fact.x+' data-long='+fact.y+'><i class="material-icons">directions_walk</i></button></p>' +
+              '<button data-lat='+fact.x+' data-long='+fact.y+' onclick="calculateAndDisplayRoute(this)"><i class="material-icons">directions_walk</i></button></p>' +
               '<button data-text='+ fact.text.split(' ').join('&#37;20') +' onclick="sendEmail(this)"><i class="material-icons">email</i></button>'
     });
 
