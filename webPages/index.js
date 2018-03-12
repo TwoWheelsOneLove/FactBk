@@ -274,8 +274,8 @@ function displayFacts(facts,map){
     let infoWindow = new google.maps.InfoWindow({
       content:'<img src=' + fact.imageSource + '>' +
               '<h1>'+ fact.title +'</h1> <p>' + fact.text + '</p>' +
-              '<button><i class="material-icons">directions_walk</i></button></p>' +
-              '<button><i class="material-icons" data-text='+ fact.text.split(' ').join('&#37;20') +' onclick="sendEmail(this)">email</i></button>'
+              '<button data-lat='+fact.x+' data-long='+fact.y+'><i class="material-icons">directions_walk</i></button></p>' +
+              '<button data-text='+ fact.text.split(' ').join('&#37;20') +' onclick="sendEmail(this)"><i class="material-icons">email</i></button>'
     });
 
     marker.addListener('click', function(){
