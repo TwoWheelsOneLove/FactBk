@@ -180,7 +180,6 @@ function goToInfo(){
         directionsDisplay.setPanel(document.getElementById('panel'));
         infoWindow = new google.maps.InfoWindow;
 
-      //  calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903));
 
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -215,10 +214,8 @@ function goToInfo(){
   infoWindow.open(map);
 }
 
-  function calculateAndDisplayRoute(directionsService, directionsDisplay, end) {
-  /*  directionsService.route({
-      var input = document.getElementById('location');
-      start = input.value;
+  function calculateAndDisplayRoute(directionsService, directionsDisplay, start, end) {
+    directionsService.route({
       origin: start,
       destination: end,
       travelMode: 'DRIVING'
@@ -228,7 +225,7 @@ function goToInfo(){
       } else {
         window.alert('Directions request failed due to ' + status);
       }
-    });*/
+    });
   }
 
 async function loadFacts(map){
@@ -274,7 +271,8 @@ function displayFacts(facts,map){
     let infoWindow = new google.maps.InfoWindow({
       content:'<img src=' + fact.imageSource + '>' +
               '<h1>'+ fact.title +'</h1> <p>' + fact.text + '</p>' +
-              '<button data-lat='+fact.x+' data-long='+fact.y+'><i class="material-icons">directions_walk</i></button></p>' +
+              '<button data-lat='+fact.x+' data-long='+fact.y + onclick("calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903)");
+'><i class="material-icons">directions_walk</i></button></p>' +
               '<button data-text='+ fact.text.split(' ').join('&#37;20') +' onclick="sendEmail(this)"><i class="material-icons">email</i></button>'
     });
 
@@ -314,4 +312,3 @@ function addToFactList(fact){
     el.dataset.id = fact.id;
     el.onclick = requestDelete;
     newFact.appendChild(el);
-};
