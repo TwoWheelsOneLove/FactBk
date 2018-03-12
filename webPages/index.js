@@ -274,7 +274,7 @@ function displayFacts(facts,map){
       content:'<img src=' + fact.imageSource + '>' +
               '<h1>'+ fact.title +'</h1> <p>' + fact.text + '</p>' +
               '<button><i class="material-icons">directions_walk</i></button></p>' +
-              '<button><i class="material-icons">email</i></button>'
+              '<button><onclick="window.location.href = "mailto:"+ "?subject=Check%20Out%20This%20Fact%20From%20FactBk&body=" + fact.text;" i class="material-icons">email</i></button>'
     });
 
     marker.addListener('click', function(){
