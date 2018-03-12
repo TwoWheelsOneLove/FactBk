@@ -6,6 +6,9 @@ function initialize(){
 
   document.querySelector('.submitFact').addEventListener('click',submitFact);
   window.LoginButton.addEventListener('click', login);
+  window.SignupButton.addEventListener('click', signup);
+  window.log.addEventListener('click', openLogin);
+  window.sign.addEventListener('click', openSignin);
   window.showMap.addEventListener('click', goToMap);
   window.showAdmin.addEventListener('click', goToAdmin)
   window.logOutBtn.addEventListener('click', logOut);
@@ -13,37 +16,21 @@ function initialize(){
 
 }
 
-let main = document.getElementsByClassName('main')[0]
-let SignInlnk = document.getElementById("signUplnk");
-let accForm = document.getElementById("accountForm");
-let signInForm = document.getElementById("logIn");
-let signlnk = document.getElementById("SignInlnk");
-
 //logIn system
-SignInlnk.addEventListener("click", switchToAccForm)
+function openLogin(){
+  window.log.setAttribute("style","color:#00ABFF; background-color: white;")
+  window.sign.setAttribute("style","color:white; background-color: #00ABFF;")
 
-function switchToAccForm() {
-  if (accForm.style.display === "block") {
-      accForm.style.display = "none";
-      signInForm.style.display = "block";
-    }
-  else {
-      accForm.style.display = "block";
-      signInForm.style.display = "none";
-  }
+  window.logForm.setAttribute("style","display:grid;")
+  window.signForm.setAttribute("style","display:none;")
 }
 
-signlnk.addEventListener("click", switchToSignInForm);
+function openSignin(){
+  window.sign.setAttribute("style","color:#00ABFF; background-color: white;")
+  window.log.setAttribute("style","color:white; background-color: #00ABFF;")
 
-function switchToSignInForm() {
-  if (signInForm.style.display === "block") {
-      signInForm.style.display = "none";
-      accForm.style.display = "block";
-    }
-  else {
-      signInForm.style.display = "block";
-      accForm.style.display = "none";
-  }
+  window.logForm.setAttribute("style","display:none;")
+  window.signForm.setAttribute("style","display:grid;")
 }
 
 async function login(){
