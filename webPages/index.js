@@ -179,7 +179,6 @@ function goToInfo(){
         directionsDisplay.setMap(map);
         directionsDisplay.setPanel(document.getElementById('panel'));
         infoWindow = new google.maps.InfoWindow;
-        //document.getElementById("Direct").onclick = function () { calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903)); };
 
       //  calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903));
 
@@ -216,8 +215,11 @@ function goToInfo(){
   infoWindow.open(map);
 }
 
-  function calculateAndDisplayRoute(directionsService, directionsDisplay, start, end) {
+  function calculateAndDisplayRoute(directionsService, directionsDisplay, end) {
+    <input type="text" id="location"></input>
     directionsService.route({
+      var input = document.getElementById('location');
+      start = input.value;
       origin: start,
       destination: end,
       travelMode: 'DRIVING'
@@ -273,8 +275,8 @@ function displayFacts(facts,map){
     let infoWindow = new google.maps.InfoWindow({
       content:'<img src=' + fact.imageSource + '>' +
               '<h1>'+ fact.title +'</h1> <p>' + fact.text + '</p>' +
-              '<button><i class="material-icons">directions_walk</i></button></p>' +
-              '<button><onclick="window.location.href = "mailto:"+ "?subject=Check%20Out%20This%20Fact%20From%20FactBk&body=" + fact.text;" i class="material-icons">email</i></button>'
+              '<button><i class="material-icons">directions_walk</i>onclick="calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.796984, -1.107903));"</button></p>' +
+              '<button><i class="material-icons">email</i></button>'
     });
 
     marker.addListener('click', function(){
