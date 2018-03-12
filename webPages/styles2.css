@@ -8,7 +8,7 @@ html {
 }
 
 body {
-
+  background-image: url("background.png");
 }
 
 main {
@@ -17,8 +17,6 @@ main {
   height: 300vh;
   position: fixed;
   top: 0vh;
-  font-size: 2em;
-  font-weight: bold;
   font-family: sans-serif;
   transition: top 1s;
 }
@@ -78,83 +76,78 @@ nav i:hover {
   overflow: hidden;
 }
 
-/* LOGIN SPECIFIC STYLES */
-#login {
-  font-family: sans-serif;
-  background-color: #f9f9f9;
-  width: 80vw;
-  margin: 10vh auto;
-  padding-bottom: 1em;
-  box-shadow: 0px 2px 10px rgba(40,0,0, 0.4);
+/*TextBox Style */
+.textbox {
+    height: 25px;
+    width: 275px;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: white;
+    outline:0;
+  }
+
+/*button style*/
+  .button {
+  	border-radius: 4px;
+    background-color:orange;
+    border: none;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
 }
 
-#login button{
-  font-weight: bolder;
-  border: none;
-  outline: none;
-  cursor: pointer;
+/*link style*/
+  a {
+      color: orange;
+  }
+
+  a:hover{
+    cursor: pointer;
+  }
+
+  h {
+  font-size: 20px;
+  color : white;
+  }
+  h1 {
+    font-size: 19px;
+  }
+
+  p{
+  	color: black;
+  }
+
+  a:active {
+    color:grey;
+  }
+
+  #login p {
+    color: white;
+  }
+
+  /* LOGIN SPECIFIC STYLES */
+#logIn {
+  background: rgba(0,0,0,0.7);/*grid colour & opacity*/
+  width: 400px;
+  padding: 25px;
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
+	margin: 10vh auto 0 auto;
+	text-align: center;
 }
 
-#login #sign {
-  height: 5vh;
-  width: 50%;
-  background-color: #FF9600;
-  float: left;
-  color: black;
-  margin-bottom: 2em;
-}
 
-#login #log {
-  height: 5vh;
-  float: left;
-  width: 50%;
-  background-color: black;
-  color: #FF9600;
-  margin-bottom: 2em;
-}
-
-#logForm {
-  width: 80%;
-  margin:auto;
-  display: grid;
-  grid-template-rows: 1fr;
-}
-
-#logForm input{
-  border: thin #FF9600 solid;
-  height: 2em;
-  margin-bottom: 1em;
-}
-
-#logForm button {
-  background-color: #FF9600;
-  color: black;
-  height: 2em;
-  margin:auto;
-  width: 50%;
-  border-radius: .5em;
-}
-
-#signForm {
-  width: 80%;
-  margin:auto;
+#accountForm {
+  background: rgba(0,0,0,0.7);/*grid colour & opacity*/
+  width: 410px;
+  padding: 25px;
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
   display: none;
-  grid-template-rows: 1fr;
-}
-
-#signForm input{
-  border: thin #FF9600 solid;
-  height: 2em;
-  margin-bottom: 1em;
-}
-
-#signForm button {
-  background-color: #FF9600;
-  color: black;
-  height: 2em;
-  margin:auto;
-  width: 50%;
-  border-radius: .5em;
+  margin: 10vh auto 0 auto;
 }
 
 #admin {
@@ -172,6 +165,7 @@ nav i:hover {
 }
 
 #listFacts {
+  background-color: white;
   height: 95vh;
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;

@@ -6,32 +6,52 @@ function initialize(){
 
   document.querySelector('.submitFact').addEventListener('click',submitFact);
   window.LoginButton.addEventListener('click', login);
-  window.SignupButton.addEventListener('click', signup);
-  window.log.addEventListener('click', openLogin);
-  window.sign.addEventListener('click', openSignin);
   window.showMap.addEventListener('click', goToMap);
   window.showAdmin.addEventListener('click', goToAdmin)
   window.logOutBtn.addEventListener('click', logOut);
   window.showInfo.addEventListener('click',goToInfo);
 
+  let SignInlnk = document.getElementById("signUplnk");
+  let signlnk = document.getElementById("SignInlnk");
+
+  SignInlnk.addEventListener("click", switchToAccForm);
+  signlnk.addEventListener("click", switchToSignInForm);
 }
+
+
+
 
 //logIn system
-function openLogin(){
-  window.log.setAttribute("style","color:#FF9600; background-color: white;")
-  window.sign.setAttribute("style","color:white; background-color: #FF9600;")
+function switchToAccForm() {
+  console.log("switching");
+  let accForm = document.getElementById("accountForm");
+  let signInForm = document.getElementById("logIn");
 
-  window.logForm.setAttribute("style","display:grid;")
-  window.signForm.setAttribute("style","display:none;")
+  if (accForm.style.display === "block") {
+      accForm.style.display = "none";
+      signInForm.style.display = "block";
+    }
+
+  else {
+      accForm.style.display = "block";
+      signInForm.style.display = "none";
+  }
 }
 
-function openSignin(){
-  window.sign.setAttribute("style","color:#FF9600; background-color: white;")
-  window.log.setAttribute("style","color:white; background-color: #FF9600;")
+function switchToSignInForm() {
+  let accForm = document.getElementById("accountForm");
+  let signInForm = document.getElementById("logIn");
 
-  window.logForm.setAttribute("style","display:none;")
-  window.signForm.setAttribute("style","display:grid;")
+  if (signInForm.style.display === "block") {
+      signInForm.style.display = "none";
+      accForm.style.display = "block";
+    }
+  else {
+      signInForm.style.display = "block";
+      accForm.style.display = "none";
+  }
 }
+
 
 async function login(){
   const email = document.getElementById('logEmail');

@@ -24,27 +24,34 @@
   <main id="main">
 
     <section class="page">
-      <h2>FACTBK</h2>
-      <p>Welcome to factBK, a fact finding app for residents of portsmouth!</p>
       <div id="login">
-        <button id="log" class="active">LOG IN</button>
-        <button id="sign">SIGN UP</button>
-
-        <section id="logForm">
-          <input id="logEmail" type="text" placeholder="Email"></input>
-          <input id="logPass" type="password" placeholder="Password"></input>
-          <button id="LoginButton">Log In</button>
+        <!--login form-->
+        <section id="logIn">
+          <h>Log in to FactBk</h>
+          <p><label>&emsp;Email:&nbsp;&nbsp;</label>
+            <input id="logEmail" class="textbox"  type = "text"/>
+          </p>
+          <p><label>Password:</label>
+            <input id="logPass" class="textbox"  type="password"/>
+          </p>
+          <button id="LoginButton" class="button" >Sign in</button>
+          <p id="signUplnk">Haven't got an account? Create one <a>here</a></p>
         </section>
 
-        <section id="signForm">
-          <input type="text" placeholder="Email"></input>
-          <input type="password" placeholder="Password"></input>
-          <button id="SignupButton">Create Account</button>
+        <section id="accountForm">
+          <h>Please fill in the details below to create an account</h>
+          <p><label>&emsp;email:&nbsp;&nbsp;</label>
+          <input class="textbox" type = "text"/>
+          </p>
+          <p><label>Password:</label>
+            <input class = "textbox" type = "password"/>
+          </p>
+            <button id="SignupButton" class="button">Create account</button>
+            <p>FactBk&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+              Already have an account? <a id="SignInlnk"> Sign in</a></p>
         </section>
       </div>
     </section>
-
-
 
 
     <div id="mapholder" class="page">
