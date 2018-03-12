@@ -206,14 +206,11 @@ nav i:hover {
 
 /*GOOGLE INFO WINDOW*/
 .gm-style .gm-style-iw {
-  /*padding:0;
+  padding:0;
   margin:0;
   height: auto;
   max-height: none;
-  width: 30vw;*/
-
-  width: 100vw;
-  height: 100vh;
+  width: 30vw;
 }
 
 .gm-style .gm-style-iw img{

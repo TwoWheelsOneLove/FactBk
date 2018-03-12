@@ -274,7 +274,7 @@ function displayFacts(facts,map){
       content:'<img src=' + fact.imageSource + '>' +
               '<h1>'+ fact.title +'</h1> <p>' + fact.text + '</p>' +
               '<button><i class="material-icons">directions_walk</i></button></p>' +
-              '<button><i class="material-icons">email</i></button>'
+              '<button><i class="material-icons" data-text='+ fact.text.split(' ').join('&#37;20') +' onclick="sendEmail(this)">email</i></button>'
     });
 
     marker.addListener('click', function(){
@@ -284,6 +284,11 @@ function displayFacts(facts,map){
   });
 };
 
+function sendEmail(target){
+  let text = target.dataset.text;
+  let emailLink = "https://mail.google.com/mail/u/0/?view=cm&fs=1&to=someone@example.com&su=SUBJECT&body=" + text;
+  window.open(emailLink);
+}
 async function requestDelete(e){
   if(e.target.dataset.id && window.confirm('Are you sure you want to delete this fact?')){
     await fetch('/api/facts/' + e.target.dataset.id, {method:'DELETE'});
