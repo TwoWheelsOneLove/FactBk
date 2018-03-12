@@ -180,6 +180,7 @@ function goToInfo(){
         directionsDisplay.setPanel(document.getElementById('panel'));
         infoWindow = new google.maps.InfoWindow;
 
+      //  calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903));
 
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -218,10 +219,6 @@ function goToInfo(){
     let factLat = fact.dataset.lat;
     let factLong = fact.dataset.long;
 
-    console.log(factLat);
-    console.log(factLong);
-
-    document.getElementById('panel').setAttribute("style","display: block;");
     let dest = new google.maps.LatLng(factLat, factLong);
     directionsService.route({
       origin: portsmouth,
@@ -319,3 +316,4 @@ function addToFactList(fact){
     el.dataset.id = fact.id;
     el.onclick = requestDelete;
     newFact.appendChild(el);
+};
