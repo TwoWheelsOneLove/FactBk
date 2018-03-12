@@ -18,16 +18,16 @@ function initialize(){
 
 //logIn system
 function openLogin(){
-  window.log.setAttribute("style","color:#00ABFF; background-color: white;")
-  window.sign.setAttribute("style","color:white; background-color: #00ABFF;")
+  window.log.setAttribute("style","color:#FF9600; background-color: white;")
+  window.sign.setAttribute("style","color:white; background-color: #FF9600;")
 
   window.logForm.setAttribute("style","display:grid;")
   window.signForm.setAttribute("style","display:none;")
 }
 
 function openSignin(){
-  window.sign.setAttribute("style","color:#00ABFF; background-color: white;")
-  window.log.setAttribute("style","color:white; background-color: #00ABFF;")
+  window.sign.setAttribute("style","color:#FF9600; background-color: white;")
+  window.log.setAttribute("style","color:white; background-color: #FF9600;")
 
   window.logForm.setAttribute("style","display:none;")
   window.signForm.setAttribute("style","display:grid;")
@@ -66,13 +66,13 @@ async function signup(){
 function clearStatus(){
   let status = document.getElementById('status');
   status.textContent="";
-  status.setAttribute("style","opacity: 0;");
+  status.setAttribute("style","opacity: 0; top:-10vh;");
 }
 
 function setStatus(text){
   let status = document.getElementById('status');
   status.textContent=text;
-  status.setAttribute("style","opacity: 1;");
+  status.setAttribute("style","opacity: 1; top:0;");
 }
 
 function showNav(){
