@@ -44,10 +44,13 @@ async function login(){
   //Check login against logins on server
   const response = await fetch(url);
 
+
+
   if (!response.ok) {
-    console.log("Username or password incorrect");
+    setStatus("The Username or Password is incorrect");
     throw response;
   }else{
+    clearStatus();
     goToMap();
     showNav();
     loadFacts(map);
@@ -60,6 +63,17 @@ async function signup(){
 
 
 //UI FUNCTIONALITY
+function clearStatus(){
+  let status = document.getElementById('status');
+  status.textContent="";
+  status.setAttribute("style","opacity: 0;");
+}
+
+function setStatus(text){
+  let status = document.getElementById('status');
+  status.textContent=text;
+  status.setAttribute("style","opacity: 1;");
+}
 
 function showNav(){
   window.nav.setAttribute("style","display: grid;");
@@ -106,20 +120,19 @@ function goToInfo(){
     submitButton.disabled = false;
     submitButton.innerHTML = '<i class="material-icons md-48">add_location</i>';
 
-    if (response.ok) {
-        factSubmitted();
-    } else {
-        console.error('error posting a story', response.status, response.statusText);
+    if (!response.ok) {
+        console.error('error submitting fact', response.status, response.statusText);
+    }else{
+      factSubmitted();
     }
   }
 
   function factSubmitted(){
+    loadFacts(map);
     document.getElementById('factTitle').value='';
     document.getElementById('factText').value='';
     document.getElementById('factLat').value='';
     document.getElementById('factLong').value='';
-
-    loadFacts(map);
   }
 
   function initMap() {
@@ -199,9 +212,7 @@ async function loadFacts(map){
   try {
 
     //TELL THE USER WE'RE WAITING FOR THE FACTS THAT THEY WANT
-    let status = document.getElementById('status');
-    status.setAttribute("style","display:block;")
-    status.innerHTML='Gathering facts...';
+    setStatus('Gathering Facts...');
 
     let url = '/api/facts';
 
@@ -215,7 +226,7 @@ async function loadFacts(map){
 
   }catch (e) {
       console.error('error getting facts', e);
-      window.status.innerHTML = 'sorry, something went wrong getting facts...';
+      setStatus("Sorry, Something went wrong getting facts");
   }
 }
 
@@ -224,9 +235,7 @@ function displayFacts(facts,map){
   let factList = document.getElementById("listFacts");
   factList.innerHTML="";
 
-  let status = document.getElementById('status');
-  status.innerHTML='';
-  status.setAttribute("style","display:none;");
+  clearStatus();
 
   facts.forEach((fact) => {
 

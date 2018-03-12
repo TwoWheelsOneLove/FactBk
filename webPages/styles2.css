@@ -20,7 +20,7 @@ main {
   font-size: 2em;
   font-weight: bold;
   font-family: sans-serif;
-  transition: 1s;
+  transition: top 1s;
 }
 
 h2 {
@@ -45,11 +45,16 @@ nav {
 
 #status {
   width:100vw;
-  height: 20vh;
+  color: white;
+  background-color:#00ABFF;
+  font-size: 1.5em;
+  font-family: sans-serif;
   position: fixed;
   text-align: center;
   z-index: 100;
-  display: none;
+  opacity: 0;
+  transition: 1s;
+  padding: 1em;
 }
 
 nav i{
@@ -237,12 +242,23 @@ nav i:hover {
 
 
 /* MEDIA QUERIES FOR SMALLER DISPLAYS */
-@media (max-width: 500px) {
+
+@media (max-width: 1400px) {
+  #listFacts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fact {
+    height: 3em;
+  }
+}
+
+@media (max-width: 1000px) {
   #listFacts {
     grid-template-columns: 1fr;
   }
 
   .fact {
-    height: 5em;
+    height: 4em;
   }
 }
