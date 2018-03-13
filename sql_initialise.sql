@@ -23,6 +23,7 @@ insert ignore into factBk.user values (3, "nasser", "testPassword3");
 insert ignore into factBk.user values (4, "igor", "testPassword4");
 insert ignore into factBk.user values (5, "isa", "testPassword5");
 insert ignore into factBk.user values (6, "phil", "sorry");
+insert ignore into factBk.user values (7, "user", "password");
 
 /* FACT INSERTS */
 insert ignore into factBk.fact values (1,"The Mary Rose","The Mary Rose Museum is a historical museum located at Historic Dockyards in Portsmouth in the United Kingdom run by the Mary Rose Trust. The museum is dedicated to the 16th century Tudor navy warship Mary Rose as well as the historical context in which she was active. The museum opened in 1984 and displays artefacts from the ship as well as the ship itself in a dedicated ship hall, while it has been undergoing conservation. In September 2009 the ship hall was closed to allow the start of construction of a new museum that was opened at the end of May 2013.", 50.802164, -1.108874, '/images/Hilsea_Barracks.JPG');
