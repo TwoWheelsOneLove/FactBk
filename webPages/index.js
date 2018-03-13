@@ -299,7 +299,7 @@ function displayFacts(facts,map){
 // Shares a fact via email
 function sendEmail(target){
   let text = target.dataset.text; // fetches fact text
-  let emailLink = "https://mail.google.com/mail/u/0/?view=cm&fs=1&su=Check%20Out%20This%20Fact%From%20FactBk&body=" + text; // mailto link
+  let emailLink = "https://mail.google.com/mail/u/0/?view=cm&fs=1&su=Check%20Out%20This%20Fact%20From%20FactBk&body=" + text; // mailto link
   window.open(emailLink); // Opens pre-written email
 }
 async function requestDelete(e){
