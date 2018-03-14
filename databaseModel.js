@@ -85,6 +85,28 @@ module.exports.addFact = (title, text, lat, long) => {
   };
 
 
+  module.exports.addUser = (email, password) => {
+    return new Promise((resolve, reject) => {
+
+      // now add the file to the DB
+      const dbRecord = {
+        email: email,
+        password: password
+      };
+
+      sql.query(sql.format('INSERT INTO user SET ?', dbRecord), (err, result) => {
+        if (err) {
+          reject(['failed sql insert', err]);
+          return;
+        }
+
+        resolve({id: result.insertId, email: dbRecord.email,password:dbRecord.password});
+      });
+      });
+    };
+
+
+
   module.exports.deleteFact = (id) => {
   return new Promise((resolve, reject) => {
 
