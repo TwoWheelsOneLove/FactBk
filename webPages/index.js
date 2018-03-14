@@ -5,11 +5,13 @@ function initialize(){
   const loggedInUser = null;
 
   document.querySelector('.submitFact').addEventListener('click',submitFact);
+  window.SignupButton.addEventListener('click',submitUser);
   window.LoginButton.addEventListener('click', login);
   window.showMap.addEventListener('click', goToMap);
   window.showAdmin.addEventListener('click', goToAdmin)
   window.logOutBtn.addEventListener('click', logOut);
   window.showInfo.addEventListener('click',goToInfo);
+
 
   let SignInlnk = document.getElementById("signUplnk");
   let signlnk = document.getElementById("SignInlnk");
@@ -76,10 +78,6 @@ async function login(){
     loadFacts(map);
   }
 };
-
-async function signup(){
-  console.log('user signed up');
-}
 
 
 //UI FUNCTIONALITY
@@ -157,8 +155,37 @@ function goToInfo(){
     document.getElementById('factLong').value='';
   }
 
-  function initMap() { // Sets up Google Map
-    let removePoi =[ // Removes points of interest (e.g. restaurants, gyms etc.)
+  //Add a new user to the db
+    async function submitUser(){
+      const email = document.getElementById('logAccEmail');
+      const password = document.getElementById('logAccPass');
+
+
+      let url ='/api/users';
+      url += '?email=' + encodeURIComponent(email.value);
+      url += '&password=' + encodeURIComponent(password.value);
+
+
+      const response = await fetch(url, {method:'post'});
+
+
+
+      if (!response.ok) {
+          console.error('error submitting user', response.status, response.statusText);
+      }else{
+        userSubmitted();
+      }
+    }
+
+    function userSubmitted(){
+      document.getElementById('logAccEmail').value='';
+      document.getElementById('logAccPass').value='';
+    }
+
+
+
+  function initMap() {
+    let removePoi =[
     {
         featureType: "poi",
         elementType: "labels",
@@ -167,23 +194,22 @@ function goToInfo(){
             ]
         }
     ];
-    // initializes direction objects
-    window.directionsService = new google.maps.DirectionsService();
-    window.directionsDisplay = new google.maps.DirectionsRenderer();
-    window.portsmouth = new google.maps.LatLng(50.796162, -1.073248);
-    window.map = new google.maps.Map(document.getElementById('mapholder'), { // assaigns Google map to "mapholder" div
+
+    let directionsService = new google.maps.DirectionsService();
+    let directionsDisplay = new google.maps.DirectionsRenderer();
+    let portsmouth = new google.maps.LatLng(50.796162, -1.073248);
+    window.map = new google.maps.Map(document.getElementById('mapholder'), {
       zoom: 16,
       center: portsmouth,
       styles: removePoi
     });
-        // Point direction objects to thier corresponding div panels
         directionsDisplay.setMap(map);
         directionsDisplay.setPanel(document.getElementById('panel'));
-
-        // Initalise Information window for geolocation feature
         infoWindow = new google.maps.InfoWindow;
+        //document.getElementById("Direct").onclick = function () { calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903)); };
 
-      // If the system is able to fetch the user's current location
+      //  calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903));
+
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
           let pos = {
@@ -191,8 +217,6 @@ function goToInfo(){
             lng: position.coords.longitude
           };
 
-          // Display an icon at the user's location
-          // This icon allows users to identify thier current location on the map
           let image = 'myLocation.png';
            let location = new google.maps.Marker({
              position: pos,
@@ -200,7 +224,6 @@ function goToInfo(){
              icon: image
            });
 
-          // Centre the map on thier location
           map.setCenter(pos);
         }, function() {
           handleLocationError(map, true, infoWindow, map.getCenter());
@@ -211,7 +234,7 @@ function goToInfo(){
       }
 
   }
-  // Error handling if browser cannot fetch user location
+
   function handleLocationError(map, browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(browserHasGeolocation ?
@@ -220,18 +243,11 @@ function goToInfo(){
   infoWindow.open(map);
 }
 
-  // Directions
-  function calculateAndDisplayRoute(fact) {
-    // Fetch the location of the fact
-    let factLat = fact.dataset.lat;
-    let factLong = fact.dataset.long;
-
-    let uni = new google.maps.LatLng(50.798474, -1.098504);
-    let dest = new google.maps.LatLng(factLat, factLong);
+  function calculateAndDisplayRoute(directionsService, directionsDisplay, start, end) {
     directionsService.route({
-      origin: uni, // Need to replace with user location
-      destination: dest, // Set fact location as route destination
-      travelMode: 'WALKING' // Assume user will be walking due to Portsmouth's density
+      origin: start,
+      destination: end,
+      travelMode: 'DRIVING'
     }, function(response, status) {
       if (status === 'OK') {
         directionsDisplay.setDirections(response);
@@ -280,15 +296,14 @@ function displayFacts(facts,map){
               position:{lat:fact.x,lng:fact.y}
             });
 
-    // Window displayed when fact marker is clicked
+
     let infoWindow = new google.maps.InfoWindow({
-      content:'<img src=' + fact.imageSource + '>' + // display fact image
+      content:'<img src=' + fact.imageSource + '>' +
               '<h1>'+ fact.title +'</h1> <p>' + fact.text + '</p>' +
-              '<button data-lat='+fact.x+' data-long='+fact.y+' onclick="calculateAndDisplayRoute(this)"><i class="material-icons">directions_walk</i></button></p>' + // directions to fact
-              '<button data-text='+ fact.text.split(' ').join('&#37;20') +' onclick="sendEmail(this)"><i class="material-icons">email</i></button>' // share fact
+              '<button><i class="material-icons">directions_walk</i></button></p>' +
+              '<button><i class="material-icons">email</i></button>'
     });
 
-    // fact information window opended when its marker is cliked
     marker.addListener('click', function(){
       infoWindow.open(map,marker);
     });
@@ -296,12 +311,6 @@ function displayFacts(facts,map){
   });
 };
 
-// Shares a fact via email
-function sendEmail(target){
-  let text = target.dataset.text; // fetches fact text
-  let emailLink = "https://mail.google.com/mail/u/0/?view=cm&fs=1&su=Check%20Out%20This%20Fact%20From%20FactBk&body=" + text; // mailto link
-  window.open(emailLink); // Opens pre-written email
-}
 async function requestDelete(e){
   if(e.target.dataset.id && window.confirm('Are you sure you want to delete this fact?')){
     await fetch('/api/facts/' + e.target.dataset.id, {method:'DELETE'});
