@@ -242,7 +242,7 @@ function goToInfo(){
 
           // Centre the map on thier location
           map.setCenter(userpos);
-        }, function() {
+        } function() {
           handleLocationError(map, true, infoWindow, map.getCenter());
         });
       } else {
