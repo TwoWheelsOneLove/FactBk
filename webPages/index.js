@@ -2,8 +2,6 @@ window.addEventListener('load', initialize);
 
 function initialize(){
 
-  const loggedInUser = null;
-
   document.querySelector('.submitFact').addEventListener('click',submitFact);
   window.SignupButton.addEventListener('click',submitUser);
   window.LoginButton.addEventListener('click', login);
@@ -200,53 +198,53 @@ function goToInfo(){
 
 
 
-  function initMap() {
-    let removePoi =[
-    {
-        featureType: "poi",
-        elementType: "labels",
-        stylers: [
-              { visibility: "off" }
-            ]
-        }
-    ];
 
-    let directionsService = new google.maps.DirectionsService();
-    let directionsDisplay = new google.maps.DirectionsRenderer();
-    let portsmouth = new google.maps.LatLng(50.796162, -1.073248);
-    window.map = new google.maps.Map(document.getElementById('mapholder'), {
-      zoom: 16,
-      center: portsmouth,
-      styles: removePoi
-    });
-        directionsDisplay.setMap(map);
-        directionsDisplay.setPanel(document.getElementById('panel'));
-        infoWindow = new google.maps.InfoWindow;
-        //document.getElementById("Direct").onclick = function () { calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903)); };
+      function initMap() {
+        let removePoi =[
+        {
+            featureType: "poi",
+            elementType: "labels",
+            stylers: [
+                  { visibility: "off" }
+                ]
+            }
+        ];
 
-      //  calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903));
-
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          let pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-
-          let image = 'myLocation.png';
-           let location = new google.maps.Marker({
-             position: pos,
-             map: map,
-             icon: image
-           });
-
-          map.setCenter(pos);
-        }, function() {
-          handleLocationError(map, true, infoWindow, map.getCenter());
+        window.directionsService = new google.maps.DirectionsService();
+        window.directionsDisplay = new google.maps.DirectionsRenderer();
+        window.portsmouth = new google.maps.LatLng(50.796162, -1.073248);
+        window.map = new google.maps.Map(document.getElementById('mapholder'), {
+          zoom: 16,
+          center: portsmouth,
+          styles: removePoi
         });
-      } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(map, false, infoWindow, map.getCenter());
+            directionsDisplay.setMap(map);
+            directionsDisplay.setPanel(document.getElementById('panel'));
+            infoWindow = new google.maps.InfoWindow;
+
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              let pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+
+              let image = 'myLocation.png';
+               let location = new google.maps.Marker({
+                 position: pos,
+                 map: map,
+                 icon: image
+               });
+
+              map.setCenter(pos);
+            }, function() {
+              handleLocationError(map, true, infoWindow, map.getCenter());
+            });
+          } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(map, false, infoWindow, map.getCenter());
+          }
+
       }
 
   }
@@ -259,19 +257,23 @@ function goToInfo(){
   infoWindow.open(map);
 }
 
-  function calculateAndDisplayRoute(directionsService, directionsDisplay, start, end) {
-    directionsService.route({
-      origin: start,
-      destination: end,
-      travelMode: 'DRIVING'
-    }, function(response, status) {
-      if (status === 'OK') {
-        directionsDisplay.setDirections(response);
-      } else {
-        window.alert('Directions request failed due to ' + status);
-      }
-    });
-  }
+function calculateAndDisplayRoute(fact) {
+  let factLat = fact.dataset.lat;
+  let factLong = fact.dataset.long;
+
+  let dest = new google.maps.LatLng(factLat, factLong);
+  directionsService.route({
+    origin: portsmouth,
+    destination: dest,
+    travelMode: 'DRIVING'
+  }, function(response, status) {
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
 
 async function loadFacts(map){
   try {
@@ -326,6 +328,12 @@ function displayFacts(facts,map){
 
   });
 };
+
+function sendEmail(target){
+  let text = target.dataset.text;
+  let emailLink = "https://mail.google.com/mail/u/0/?view=cm&fs=1&to=someone@example.com&su=SUBJECT&body=" + text;
+  window.open(emailLink);
+}
 
 async function requestDelete(e){
   if(e.target.dataset.id && window.confirm('Are you sure you want to delete this fact?')){
