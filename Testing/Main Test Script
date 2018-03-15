@@ -1,0 +1,39 @@
+############################################### Demo Script #############################################
+## Point calibration = x- 12, y-93 (for Nasser's laptop when not fullscreen)
+#########################################################################################################
+
+##Start Factbk
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+
+##Login
+write("igor", into="Email")
+write(“testPassword4”, into="Password")
+click("Sign in")
+
+##View a fact
+click(Point(452, 87))                       #Click Marker
+
+##Share a fact
+click(Point(548, 416))                      #Click share fact button
+!NOT FINISHED!
+
+##Get directions to fact
+!TO DO !
+click(Point(653, 33))                       #Click close fact button
+
+##Admin features (add and remove facts)
+click(Point(478, 698))                      #Admin Button
+write("Test Fact Title", into="Fact Title)  #Fill in fact details
+write("Test Fact Text", into="Fact Text")
+wirte("50.792110", into="Fact Lattitude")
+write("-1.084824", into="Fact Longtitude")
+write("https://www.visitportsmouth.co.uk/imageresizer/?image=%2Fdbimgs%2FPortsmouth%20resized.jpg&action=InspireMeSmall", into="Image Source")
+click(Point(1066, 618))                    #Click add fact button
+click(Point(782, 217))                     #Click delete fact button for Landport
+
+##About
+click(Point(800, 698))                     #Click about button
+
+##Sign out
+click(Point(1120, 697))                    #Click sign out button
