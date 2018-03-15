@@ -19,7 +19,6 @@ app.get('/api/facts', sendFacts);
 app.post('/api/facts', addFact);
 app.delete('/api/facts/:id', deleteFact)
 app.get('/api/login', validateLogin);
-app.post('/api/users', addUser);
 
 // start server
 app.listen(8080, (err) => {
@@ -85,22 +84,6 @@ async function validateLogin(req,res){
     error(res, e);
   }
 }
-
-
-async function addUser(req,res){
-  try {
-      const retval = await db.addUser(req.query.email,req.query.password);
-      if (req.accepts('html')) {
-          res.json(200);
-        } else {
-          // request that accepts JSON will instead get the data
-          res.json(retval);
-        }
-
-      } catch (e) {
-      error(res, e);
-      }
-    }
 
 
 function error(res, msg) {

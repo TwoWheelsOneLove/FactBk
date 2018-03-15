@@ -3,13 +3,11 @@ window.addEventListener('load', initialize);
 function initialize(){
 
   document.querySelector('.submitFact').addEventListener('click',submitFact);
-  window.SignupButton.addEventListener('click',submitUser);
   window.LoginButton.addEventListener('click', login);
   window.showMap.addEventListener('click', goToMap);
   window.showAdmin.addEventListener('click', goToAdmin)
   window.logOutBtn.addEventListener('click', logOut);
   window.showInfo.addEventListener('click',goToInfo);
-
 
   let SignInlnk = document.getElementById("signUplnk");
   let signlnk = document.getElementById("SignInlnk");
@@ -69,10 +67,6 @@ async function login(){
   if (!response.ok) {
     setStatus("The Username or Password is incorrect");
     throw response;
-  }else if(document.getElementById('logEmail').value ==''){
-    setStatus("Please enter email");
-  }else if(document.getElementById('logPass').value ==''){
-    setStatus("Please enter password");
   }else{
     clearStatus();
     goToMap();
@@ -81,6 +75,9 @@ async function login(){
   }
 };
 
+async function signup(){
+  console.log('user signed up');
+}
 
 
 //UI FUNCTIONALITY
@@ -158,95 +155,55 @@ function goToInfo(){
     document.getElementById('factLong').value='';
   }
 
-  //Add a new user to the db
-    async function submitUser(){
-      const email = document.getElementById('logAccEmail');
-      const password = document.getElementById('logAccPass');
+  function initMap() {
+    let removePoi =[
+    {
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [
+              { visibility: "off" }
+            ]
+        }
+    ];
 
+    window.directionsService = new google.maps.DirectionsService();
+    window.directionsDisplay = new google.maps.DirectionsRenderer();
+    window.portsmouth = new google.maps.LatLng(50.796162, -1.073248);
+    window.map = new google.maps.Map(document.getElementById('mapholder'), {
+      zoom: 16,
+      center: portsmouth,
+      styles: removePoi
+    });
+        directionsDisplay.setMap(map);
+        directionsDisplay.setPanel(document.getElementById('panel'));
+        infoWindow = new google.maps.InfoWindow;
 
-      let url ='/api/users';
-      url += '?email=' + encodeURIComponent(email.value);
-      url += '&password=' + encodeURIComponent(password.value);
+      //  calculateAndDisplayRoute(directionsService,directionsDisplay, new google.maps.LatLng(50.778047, -1.088848), new google.maps.LatLng(50.796984, -1.107903));
 
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          let pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
 
-      const response = await fetch(url, {method:'post'});
+          let image = 'myLocation.png';
+           let location = new google.maps.Marker({
+             position: pos,
+             map: map,
+             icon: image
+           });
 
-
-
-      if (!response.ok) {
-          console.error('error submitting user', response.status, response.statusText);
-      }else{
-        userSubmitted(response);
-      }
-    }
-
-    function userSubmitted(response){
-      if (document.getElementById('logAccEmail').value =='') {
-        setStatus("Please enter email");
-        throw response;
-      }else if (document.getElementById('logAccPass').value =='') {
-        setStatus("Please enter password");
-        throw response;
-      }else{
-        document.getElementById('logAccEmail').value='';
-        document.getElementById('logAccPass').value='';
-        switchToSignInForm();
-      }
-    }
-
-
-
-
-
-
-      function initMap() {
-        let removePoi =[
-        {
-            featureType: "poi",
-            elementType: "labels",
-            stylers: [
-                  { visibility: "off" }
-                ]
-            }
-        ];
-
-        window.directionsService = new google.maps.DirectionsService();
-        window.directionsDisplay = new google.maps.DirectionsRenderer();
-        window.portsmouth = new google.maps.LatLng(50.796162, -1.073248);
-        window.map = new google.maps.Map(document.getElementById('mapholder'), {
-          zoom: 16,
-          center: portsmouth,
-          styles: removePoi
+          map.setCenter(pos);
+        }, function() {
+          handleLocationError(map, true, infoWindow, map.getCenter());
         });
-            directionsDisplay.setMap(map);
-            directionsDisplay.setPanel(document.getElementById('panel'));
-            infoWindow = new google.maps.InfoWindow;
-
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-              let pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-              };
-
-              let image = 'myLocation.png';
-               let location = new google.maps.Marker({
-                 position: pos,
-                 map: map,
-                 icon: image
-               });
-
-              map.setCenter(pos);
-            }, function() {
-              handleLocationError(map, true, infoWindow, map.getCenter());
-            });
-          } else {
-            // Browser doesn't support Geolocation
-            handleLocationError(map, false, infoWindow, map.getCenter());
-          }
-
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(map, false, infoWindow, map.getCenter());
       }
 
+  }
 
   function handleLocationError(map, browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
@@ -256,23 +213,23 @@ function goToInfo(){
   infoWindow.open(map);
 }
 
-function calculateAndDisplayRoute(fact) {
-  let factLat = fact.dataset.lat;
-  let factLong = fact.dataset.long;
+  function calculateAndDisplayRoute(fact) {
+    let factLat = fact.dataset.lat;
+    let factLong = fact.dataset.long;
 
-  let dest = new google.maps.LatLng(factLat, factLong);
-  directionsService.route({
-    origin: portsmouth,
-    destination: dest,
-    travelMode: 'DRIVING'
-  }, function(response, status) {
-    if (status === 'OK') {
-      directionsDisplay.setDirections(response);
-    } else {
-      window.alert('Directions request failed due to ' + status);
-    }
-  });
-}
+    let dest = new google.maps.LatLng(factLat, factLong);
+    directionsService.route({
+      origin: portsmouth,
+      destination: dest,
+      travelMode: 'DRIVING'
+    }, function(response, status) {
+      if (status === 'OK') {
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
+  }
 
 async function loadFacts(map){
   try {
@@ -317,8 +274,8 @@ function displayFacts(facts,map){
     let infoWindow = new google.maps.InfoWindow({
       content:'<img src=' + fact.imageSource + '>' +
               '<h1>'+ fact.title +'</h1> <p>' + fact.text + '</p>' +
-              '<button><i class="material-icons">directions_walk</i></button></p>' +
-              '<button><i class="material-icons">email</i></button>'
+              '<button data-lat='+fact.x+' data-long='+fact.y+' onclick="calculateAndDisplayRoute(this)"><i class="material-icons">directions_walk</i></button></p>' +
+              '<button data-text='+ fact.text.split(' ').join('&#37;20') +' onclick="sendEmail(this)"><i class="material-icons">email</i></button>'
     });
 
     marker.addListener('click', function(){
@@ -333,7 +290,6 @@ function sendEmail(target){
   let emailLink = "https://mail.google.com/mail/u/0/?view=cm&fs=1&to=someone@example.com&su=SUBJECT&body=" + text;
   window.open(emailLink);
 }
-
 async function requestDelete(e){
   if(e.target.dataset.id && window.confirm('Are you sure you want to delete this fact?')){
     await fetch('/api/facts/' + e.target.dataset.id, {method:'DELETE'});
