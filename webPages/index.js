@@ -71,6 +71,10 @@ async function login(){
   if (!response.ok) {
     setStatus("The Username or Password is incorrect");
     throw response;
+  }else if(document.getElementById('logEmail').value ==''){
+    setStatus("Please enter email");
+  }else if(document.getElementById('logPass').value ==''){
+    setStatus("Please enter password");
   }else{
     clearStatus();
     goToMap();
@@ -78,6 +82,7 @@ async function login(){
     loadFacts(map);
   }
 };
+
 
 
 //UI FUNCTIONALITY
@@ -178,9 +183,20 @@ function goToInfo(){
     }
 
     function userSubmitted(){
-      document.getElementById('logAccEmail').value='';
-      document.getElementById('logAccPass').value='';
+      if (document.getElementById('logAccEmail').value =='') {
+        setStatus("Please enter email");
+        throw response;
+      }else if (document.getElementById('logAccPass').value =='') {
+        setStatus("Please enter password");
+        throw response;
+      }else{
+        document.getElementById('logAccEmail').value='';
+        document.getElementById('logAccPass').value='';
+        switchToSignInForm();
+      }
     }
+
+
 
 
 
