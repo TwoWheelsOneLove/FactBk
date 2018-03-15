@@ -26,7 +26,6 @@ Admin pages - serj
 Tutorial and FAQ if you’ve run out of things to do 
 
 Testing
-Figure out why shit dont work
 Fix them
 Do the testing documents
 
