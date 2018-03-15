@@ -7,6 +7,7 @@ body {
   margin:0;
 }
 
+
 main {
   z-index: 10;
   width:100vw;
@@ -24,8 +25,8 @@ h2 {
 }
 
 
-
 nav {
+  overflow: hidden;
   border-top: solid #FF9600 medium;
   width: 100vw;
   position: fixed;
@@ -81,7 +82,13 @@ nav i:hover {
     border-width: 0px 0px 1px 0px;
     border-color: white;
     outline:0;
+    color : white;
+    font-size: 15px;
   }
+
+
+
+
 
 /*button style*/
   .button {
@@ -202,11 +209,14 @@ nav i:hover {
 
 /*GOOGLE INFO WINDOW*/
 .gm-style .gm-style-iw {
-  padding:0;
+  /*padding:0;
   margin:0;
   height: auto;
   max-height: none;
-  width: 30vw;
+  width: 30vw;*/
+
+  width: 100vw;
+  height: 100vh;
 }
 
 .gm-style .gm-style-iw img{
