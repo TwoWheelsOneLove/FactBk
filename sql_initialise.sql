@@ -21,7 +21,7 @@ insert ignore into factBk.user values (1, "up795987@myport.ac.uk", "dansPassword
 insert ignore into factBk.user values (2, "surajit ghosh", "testPassword2");
 insert ignore into factBk.user values (3, "nasser", "testPassword3");
 insert ignore into factBk.user values (4, "igor", "testPassword4");
-insert ignore into factBk.user values (5, "isa", "testPassword5");
+insert ignore into factBk.user values (5, "isa", "test");
 insert ignore into factBk.user values (6, "phil", "sorry");
 
 /* FACT INSERTS */
