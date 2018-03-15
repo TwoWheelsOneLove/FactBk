@@ -249,14 +249,6 @@ function goToInfo(){
       }
 
   }
-  // Error handling if browser cannot fetch user location
-  function handleLocationError(map, browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-  infoWindow.open(map);
-}
 
   // Directions
   function calculateAndDisplayRoute(fact) {
