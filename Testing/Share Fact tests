@@ -1,5 +1,26 @@
+## Share fact to wrong email ##
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+write("igor", into="Email")
+write("testPassword4", into="Password")
+click("Sign in")
+click(Point(452, 87)) #Marker
+click(Point(548, 416)) #Share fact
+write("fewfew", into="To")
+click("Send")
 
-## Share Fact; #############################################
+## Share fact and the "To" field is empty ##
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+write("igor", into="Email")
+write("testPassword4", into="Password")
+click("Sign in")
+click(Point(452, 87)) #Marker
+click(Point(548, 416)) #Share fact
+write("", into="To")
+click("Send")
+
+## Share Fact (Valid) ##
 start_chrome()
 go_to("http://up806632.myvm.port.ac.uk/")
 write("igor", into="Email")
