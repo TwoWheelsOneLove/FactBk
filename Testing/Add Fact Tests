@@ -1,4 +1,57 @@
 ## Add Fact ###############################################
+
+## Add fact without values
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+write("igor", into="Email")
+write("testPassword4", into="Email")
+click("Sign in")
+click(Point(478, 698))                      #Admin Button
+click(Point(1066, 618))                     #Add Fact Button
+
+## Add fact with large coordinate values
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+write("igor", into="Email")
+write("testPassword4", into="Email")
+click("Sign in")
+click(Point(478, 698))                      #Admin Button
+write("Test Fact Title", into="Fact Title)
+write("Test Fact Text", into="Fact Text")
+wirte("500000000000000000.79211333333333", into="Fact Lattitude")
+write("-10000000000.084824333333333333", into="Fact Longtitude")
+write("https://www.visitportsmouth.co.uk/imageresizer/?image=%2Fdbimgs%2FPortsmouth%20resized.jpg&action=InspireMeSmall", into="Image Source")
+click(Point(1066, 618))                     #Add Fact Button
+
+## Add fact with invalid image source
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+write("igor", into="Email")
+write("testPassword4", into="Email")
+click("Sign in")
+click(Point(478, 698))                      #Admin Button
+write("Test Fact Title", into="Fact Title)
+write("Test Fact Text", into="Fact Text")
+wirte("50.792110", into="Fact Lattitude")
+write("-1.084824", into="Fact Longtitude")
+write("Potato")
+click(Point(1066, 618))                     #Add Fact Button
+
+## Add fact with large string value for fact title and 
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+write("igor", into="Email")
+write("testPassword4", into="Email")
+click("Sign in")
+click(Point(478, 698))                      #Admin Button
+write("very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very big string", into="Fact Title)
+write("very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very  large text", into="Fact Text")
+wirte("50.792110", into="Fact Lattitude")
+write("-1.084824", into="Fact Longtitude")
+write("https://www.visitportsmouth.co.uk/imageresizer/?image=%2Fdbimgs%2FPortsmouth%20resized.jpg&action=InspireMeSmall", into="Image Source")
+click(Point(1066, 618))
+
+## Add appropriate fact
 start_chrome()
 go_to("http://up806632.myvm.port.ac.uk/")
 write("igor", into="Email")
@@ -10,4 +63,6 @@ write("Test Fact Text", into="Fact Text")
 wirte("50.792110", into="Fact Lattitude")
 write("-1.084824", into="Fact Longtitude")
 write("https://www.visitportsmouth.co.uk/imageresizer/?image=%2Fdbimgs%2FPortsmouth%20resized.jpg&action=InspireMeSmall", into="Image Source")
-click(Point(1066, 618))                     #Sign out Button
+click(Point(1066, 618))                     #Add Fact Button
+
+
