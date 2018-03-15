@@ -5,6 +5,7 @@ function initialize(){
   const loggedInUser = null;
 
   document.querySelector('.submitFact').addEventListener('click',submitFact);
+  window.SignupButton.addEventListener('click',submitUser);
   window.LoginButton.addEventListener('click', login);
   window.showMap.addEventListener('click', goToMap);
   window.showAdmin.addEventListener('click', goToAdmin)
@@ -69,6 +70,10 @@ async function login(){
   if (!response.ok) {
     setStatus("The Username or Password is incorrect");
     throw response;
+  }else if(document.getElementById('logEmail').value ==''){
+    setStatus("Please enter email");
+  }else if(document.getElementById('logPass').value ==''){
+    setStatus("Please enter password");
   }else{
     clearStatus();
     goToMap();
@@ -77,9 +82,6 @@ async function login(){
   }
 };
 
-async function signup(){
-  console.log('user signed up');
-}
 
 
 //UI FUNCTIONALITY
@@ -156,6 +158,43 @@ function goToInfo(){
     document.getElementById('factLat').value='';
     document.getElementById('factLong').value='';
   }
+
+//Add a new user to the db
+    async function submitUser(){
+      const email = document.getElementById('logAccEmail');
+      const password = document.getElementById('logAccPass');
+
+
+      let url ='/api/users';
+      url += '?email=' + encodeURIComponent(email.value);
+      url += '&password=' + encodeURIComponent(password.value);
+
+
+      const response = await fetch(url, {method:'post'});
+
+
+
+      if (!response.ok) {
+          console.error('error submitting user', response.status, response.statusText);
+      }else{
+        userSubmitted();
+      }
+    }
+
+    function userSubmitted(){
+      if (document.getElementById('logAccEmail').value =='') {
+        setStatus("Please enter email");
+        throw response;
+      }else if (document.getElementById('logAccPass').value =='') {
+        setStatus("Please enter password");
+        throw response;
+      }else{
+        document.getElementById('logAccEmail').value='';
+        document.getElementById('logAccPass').value='';
+        switchToSignInForm();
+      }
+    }
+
 
   function initMap() { // Sets up Google Map
     let removePoi =[ // Removes points of interest (e.g. restaurants, gyms etc.)
