@@ -1,25 +1,16 @@
 # FactBk
 A historical fact finding webApp
 
-V1.0.0
+How to run FactBK  
 
-First time running instructions--
+Open your VM  
 
-  1. Install all files onto your vm,
-  or local machine running node.js and mysql server
+Enter the following commands  
 
-  2. Install using npm install
+git clone https://github.com/TwoWheelsOneLove/FactBk.git   
+cd FactBk	+cd FactBk  
+npm install	+npm install  
+npm sql_initialise.sql	+npm sql_initialise.sql  
+node server.js	+node server.js  
 
-  3. Initialise database using npm run initsql
-
-  4. enter "node server.js" to launch the server and
-  navigate to web address to view the page.
-
-  5. go to the ip address located on your vm to view the web app
-
-
-Issues relating to database creation.--
-  If you are having issues relating to database
-  creation, make sure the details in the config are
-  correct and make sure you have no database called "factBk"
-  already on your VM.
+Create your own account when faced with the login screen
