@@ -7,7 +7,7 @@ Open your VM
 
 Enter the following commands: 
 
-git clone https://github.com/TwoWheelsOneLove/FactBk.git
+git clone https://github.com/TwoWheelsOneLove/FactBk.git 
 cd FactBk
 npm install
 npm sql_initialise.sql
