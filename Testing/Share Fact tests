@@ -6,9 +6,8 @@ write("testPassword4", into="Password")
 click("Sign in")
 click(Point(452, 87)) #Marker
 click(Point(548, 416)) #Share fact
-write("fewfew", into="To")
+write("fewfew44", into="To")
 click("Send")
-kill_browser()
 
 ## Share fact and the "To" field is empty ##
 start_chrome()
@@ -20,7 +19,6 @@ click(Point(452, 87)) #Marker
 click(Point(548, 416)) #Share fact
 write("", into="To")
 click("Send")
-kill_browser()
 
 ## Share Fact (Valid) ##
 start_chrome()
@@ -32,4 +30,3 @@ click(Point(452, 87)) #Marker
 click(Point(548, 416)) #Share fact
 write("up840212@myport.ac.uk", into="To")
 click("Send")
-kill_browser()
