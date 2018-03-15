@@ -247,7 +247,6 @@ function goToInfo(){
 
       }
 
-  }
 
   function handleLocationError(map, browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
