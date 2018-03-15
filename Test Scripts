@@ -1,48 +1,61 @@
 ## Helium Testing Scripts
 ### Coordinates for screen are measured using Nasser's laptop configurations.
 
+#Create_account;
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+click("here")
+write("Claudia", into="Email")
+write("testPassword8", into="Password")
+click("Create account")
+
 Login; 
 start_chrome()
-go_to(server IP)
+go_to("http://up806632.myvm.port.ac.uk/")
 write("igor", into="Email")
-write(“testPassword4”, into="Password")
+write("testPassword4", into="Password")
 click("Sign in")
 
 Open Fact;
 start_chrome()
-go_to(server IP)
+go_to("http://up806632.myvm.port.ac.uk/")
 write("igor" into="Email")
 write("testPassword4", into="Password")
-click(“Sign in”)
-click(“Marker”)
+click("Sign in")
+click(Point(452, 87)) #Marker
 
 Share Fact;
 start_chrome()
-go_to(server IP)
+go_to("http://up806632.myvm.port.ac.uk/")
 write("igor", into="Email")
 write("testPassword4", into="Password")
 click("Sign in")
-click("Marker")
-click ("Share marker")
+click(Point(452, 87)) #Marker
+click(Point(548, 416)) #Share fact
 
 Get Directions;
 start_chrome()
-go_to(server IP)
+go_to("http://up806632.myvm.port.ac.uk/")
 write("igor", into="Email")
-write(“testPassword4” into="Email")
+write("testPassword4", into="Email")
 click("Sign in")
 click(Point(452, 87)) #Marker
 click(Point(356, 419)) #Get directions
 
-
-
+Add Fact;
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+write("igor", into="Email")
+write("testPassword4", into="Email")
+click("Sign in")
+## to be continued
 
 
 #### Demo Script ######
 #### Point calibration = x- 12, y-93
 Login; 
 start_chrome()
-go_to(server IP)
+go_to("http://up806632.myvm.port.ac.uk/")
 write("igor", into="Email")
 write(“testPassword4”, into="Password")
 click("Sign in")
