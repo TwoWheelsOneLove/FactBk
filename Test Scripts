@@ -82,6 +82,15 @@ go_to("http://up806632.myvm.port.ac.uk/")
 write("igor", into="Email")
 write(“testPassword4”, into="Password")
 click("Sign in")
-click(Point(452, 87)) #Marker
-click(Point(548, 416)) #Share fact
-click(Point(653, 33)) #Close fact
+click(Point(452, 87))                       #Click Marker
+click(Point(548, 416))                      #Share fact
+click(Point(653, 33))                       #Close fact
+click(Point(478, 698))                      #Admin Button
+write("Test Fact Title", into="Fact Title)
+write("Test Fact Text", into="Fact Text")
+wirte("50.792110", into="Fact Lattitude")
+write("-1.084824", into="Fact Longtitude")
+write("https://www.visitportsmouth.co.uk/imageresizer/?image=%2Fdbimgs%2FPortsmouth%20resized.jpg&action=InspireMeSmall", into="Image Source")
+click(Point(1066, 618))                    #Click add fact button
+click(Point(800, 698))
+click(Point(1120, 697))
