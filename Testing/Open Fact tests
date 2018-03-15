@@ -1,4 +1,13 @@
-### Open Fact; ###
+## Clicking on marker using wrong points (x,y) ##
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+write("igor" into="Email")
+write("testPassword4", into="Password")
+click("Sign in")
+click(Point(590, 232)) #Marker
+
+
+### Open Fact (Valid) ###
 start_chrome()
 go_to("http://up806632.myvm.port.ac.uk/")
 write("igor" into="Email")
