@@ -16,10 +16,8 @@ click(Point(452, 87))                       #Click Marker
 
 ##Share a fact
 click(Point(548, 416))                      #Click share fact button
-!NOT FINISHED!
 
 ##Get directions to fact
-!TO DO !
 click(Point(653, 33))                       #Click close fact button
 
 ##Admin features (add and remove facts)
