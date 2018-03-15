@@ -217,7 +217,6 @@ function goToInfo(){
     });
         // Point direction objects to thier corresponding div panels
         directionsDisplay.setMap(map);
-        directionsDisplay.setPanel(document.getElementById('panel'));
 
         // Initalise Information window for geolocation feature
         infoWindow = new google.maps.InfoWindow;
