@@ -264,7 +264,7 @@ function goToInfo(){
         let pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
-        };
+        }
       }
     }
 
@@ -272,7 +272,7 @@ function goToInfo(){
     let uni = new google.maps.LatLng(50.798474, -1.098504);
     let dest = new google.maps.LatLng(factLat, factLong);
     directionsService.route({
-      origin: pos, // Need to replace with user location
+      origin: new google.maps.LatLng(lat,lng);, // Need to replace with user location
       destination: dest, // Set fact location as route destination
       travelMode: 'WALKING' // Assume user will be walking due to Portsmouth's density
     }, function(response, status) {
