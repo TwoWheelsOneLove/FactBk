@@ -1,0 +1,21 @@
+## Zooming in and out
+## Scrolling left and right
+
+## Login
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+write("igor" into="Email")
+write("testPassword4", into="Password")
+click("Sign in")
+##
+## Zooming Out
+scroll_down(num_pixels=200)
+##
+## Zooming In
+scroll_down(num_pixels=200)
+##
+## Scrolling Right
+drag((Point(300,300)), to=(Point(500,300)))
+##
+## Scrolling Left
+drag((Point(500,300)), to=(Point(300,300)))
