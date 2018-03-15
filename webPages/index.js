@@ -176,11 +176,11 @@ function goToInfo(){
       if (!response.ok) {
           console.error('error submitting user', response.status, response.statusText);
       }else{
-        userSubmitted();
+        userSubmitted(response);
       }
     }
 
-    function userSubmitted(){
+    function userSubmitted(response){
       if (document.getElementById('logAccEmail').value =='') {
         setStatus("Please enter email");
         throw response;
