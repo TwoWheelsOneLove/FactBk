@@ -1,0 +1,7 @@
+### Open Fact; ###
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+write("igor" into="Email")
+write("testPassword4", into="Password")
+click("Sign in")
+click(Point(452, 87)) #Marker
