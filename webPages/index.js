@@ -224,10 +224,10 @@ function goToInfo(){
       // If the system is able to fetch the user's current location
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-          let pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
+          window.userpos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        });
+
+
 
 
 
@@ -235,13 +235,13 @@ function goToInfo(){
           // This icon allows users to identify thier current location on the map
           let image = 'myLocation.png';
            let location = new google.maps.Marker({
-             position: pos,
+             position: userpos,
              map: map,
              icon: image
            });
 
           // Centre the map on thier location
-          map.setCenter(pos);
+          map.setCenter(userpos);
         }, function() {
           handleLocationError(map, true, infoWindow, map.getCenter());
         });
@@ -259,20 +259,13 @@ function goToInfo(){
     let factLong = fact.dataset.long;
 
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        let pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        }
-      }
-    }
+
 
 
     let uni = new google.maps.LatLng(50.798474, -1.098504);
     let dest = new google.maps.LatLng(factLat, factLong);
     directionsService.route({
-      origin: new google.maps.LatLng(lat,lng);, // Need to replace with user location
+      origin:userpos, // Need to replace with user location
       destination: dest, // Set fact location as route destination
       travelMode: 'WALKING' // Assume user will be walking due to Portsmouth's density
     }, function(response, status) {
