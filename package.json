@@ -4,7 +4,7 @@
   "description": "A historical fact finding webApp",
   "main": "config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node test.js",
     "start": "node server.js",
     "initsql": "mysql -u root -p < sql_initialise.sql"
   },
@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/TwoWheelsOneLove/FactBk#readme",
   "dependencies": {
-  "express": "^4.16.2",
-  "mysql": "^2.15.0"
-
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "qunit": "^2.5.1"
   }
 }
