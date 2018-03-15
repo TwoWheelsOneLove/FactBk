@@ -1,5 +1,14 @@
 ## Helium Testing Scripts
-### Coordinates for screen are measured using Nasser's laptop configurations.
+## Coordinates for screen are measured using Nasser's laptop configurations.
+
+## Coordinates ################################################
+## Admin Button:            478, 698
+## Map Button:              160, 700
+## About Button:            800, 698
+## Sign out Button:         1120, 697
+## Remove fact (Landport):  782, 217
+## Add fact button:         1066, 618
+###############################################################
 
 #Create_account;
 start_chrome()
