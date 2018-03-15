@@ -18,14 +18,14 @@ write("Claudia", into="Email")
 write("testPassword8", into="Password")
 click("Create account")
 
-Login; 
+### Login;  ###
 start_chrome()
 go_to("http://up806632.myvm.port.ac.uk/")
 write("igor", into="Email")
 write("testPassword4", into="Password")
 click("Sign in")
 
-Open Fact;
+### Open Fact; ###
 start_chrome()
 go_to("http://up806632.myvm.port.ac.uk/")
 write("igor" into="Email")
@@ -33,7 +33,7 @@ write("testPassword4", into="Password")
 click("Sign in")
 click(Point(452, 87)) #Marker
 
-Share Fact;
+### Share Fact; ###
 start_chrome()
 go_to("http://up806632.myvm.port.ac.uk/")
 write("igor", into="Email")
@@ -42,7 +42,7 @@ click("Sign in")
 click(Point(452, 87)) #Marker
 click(Point(548, 416)) #Share fact
 
-Get Directions;
+### Get Directions; ###
 start_chrome()
 go_to("http://up806632.myvm.port.ac.uk/")
 write("igor", into="Email")
@@ -51,7 +51,7 @@ click("Sign in")
 click(Point(452, 87)) #Marker
 click(Point(356, 419)) #Get directions
 
-Add Fact;
+### Add Fact; ###
 start_chrome()
 go_to("http://up806632.myvm.port.ac.uk/")
 write("igor", into="Email")
@@ -65,6 +65,14 @@ write("-1.084824", into="Fact Longtitude")
 write("https://www.visitportsmouth.co.uk/imageresizer/?image=%2Fdbimgs%2FPortsmouth%20resized.jpg&action=InspireMeSmall", into="Image Source")
 click(Point(1066, 618))
 
+### Delete Fact ###
+start_chrome()
+go_to("http://up806632.myvm.port.ac.uk/")
+write("igor", into="Email")
+write("testPassword4", into="Email")
+click("Sign in")
+click(Point(478, 698)) #Admin Button
+click(Point(782, 217))
 
 #### Demo Script ######
 #### Point calibration = x- 12, y-93
