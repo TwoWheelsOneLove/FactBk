@@ -1,0 +1,16 @@
+##Login Test Script for different parameters ######################
+
+##Login with wrong username with an existing password
+write("Alex123@mail.com", into="Email")
+write(“testPassword4”, into="Password")
+click("Sign in")
+
+##Login with correct username but incorrect password
+write("igor", into="Email")
+write(“testPassword4”, into="Password")
+click("Sign in")
+
+##Login with correct username and password
+write("igor", into="Email")
+write(“testPassword4”, into="Password")
+click("Sign in")
