@@ -1,4 +1,6 @@
 ##Login Test Script for different parameters ######################
+from helium.api import *
+###################################################################
 
 ##Login without username or password
 start_chrome()
