@@ -1,5 +1,7 @@
 ## Delete Fact #############################################
 ## Deleting a fact consists of opening the admin panel and clicking the delete button on facts displayed
+from helium.api import *
+############################################################
 
 ## Delete existing fact
 start_chrome()
