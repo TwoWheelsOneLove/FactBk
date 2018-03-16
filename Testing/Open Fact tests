@@ -1,3 +1,7 @@
+## Open fact tests ##############################
+from helium.api import *
+#################################################
+
 ## Clicking on marker using wrong points (x,y) ##
 start_chrome()
 go_to("http://up806632.myvm.port.ac.uk/")
