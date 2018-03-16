@@ -1,3 +1,7 @@
+## Share a  fact tests###############################
+from helium.api import *
+#####################################################
+
 ## Share fact to wrong email ##
 start_chrome()
 go_to("http://up806632.myvm.port.ac.uk/")
