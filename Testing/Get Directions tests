@@ -1,4 +1,6 @@
 ## Get Directions; #########################################
+from helium.api import *
+############################################################
 start_chrome()
 go_to("http://up806632.myvm.port.ac.uk/")
 write("igor", into="Email")
