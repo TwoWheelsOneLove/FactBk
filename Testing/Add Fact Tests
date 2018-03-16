@@ -1,5 +1,6 @@
 ## Add Fact ###############################################
-
+from helium.api import *
+###########################################################
 ## Add fact without values
 start_chrome()
 go_to("http://up806632.myvm.port.ac.uk/")
