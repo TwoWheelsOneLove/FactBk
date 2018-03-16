@@ -1,5 +1,9 @@
+#######################################################
+## Tests to see maps behaviour when:
 ## Zooming in and out
 ## Scrolling left and right
+from helium.api import *
+#######################################################
 
 ## Login
 start_chrome()
